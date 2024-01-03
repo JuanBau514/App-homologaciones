@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300&display=swap');
+
+:root{
+    --main-color:#e38528;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    line-height: 1.5;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #fcf2e8;
+    padding-left: 30rem;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    flex-flow: column;
+    padding: 8rem 2rem;
+    width: 30rem;
+    text-align: center;
+}
+
+header .logo{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+header .logo span{
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+
+header .navbar a {
+    display: block;
+    font-size: 2rem;
+    color: #fff;
+    margin: 2rem 0;
+}
+
+header .navbar a:hover{
+    letter-spacing: .1rem;
+    color: var(--main-color);
+}
+
+header .iconos a {
+    display: inline-block; /* Asegura que el contenedor se ajuste al tamaño del icono */
+    margin: 0.7rem 0;
+}
+
+header .iconos a:hover svg {
+    fill: var(--main-color); /* Cambia el color al hacer hover */
+}
+
+header .iconos img {
+    width: 3rem;
+}
+
+/* Estilo adicional para cambiar el color de fondo del PNG al hacer hover */
+header .iconos a:hover img {
+    background-color: var(--main-color);
+}
+
+#barra-menu {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+/* Añadido: Estilo para el menú responsive */
+.menu-icon {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .menu-icon {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    header {
+        left: -120%;
+    }
+
+    header.active {
+        left: 0%;
+        transition: left 0.5s linear;
+    }
+
+    .navbar__menu {
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+    }
+
+    .navbar__menu--item {
+        margin-bottom: 1rem;
+    }
+
+    body {
+        padding-left: 0;
+    }
+    
+    header:not(.active) {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    header {
+        left: -120%;
+    }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homologaciones UD sistemas</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./estilos/header.css">
+</head>
+
+<body>
+
+    <div id="barra-menu" class="barra bar-menu menu-icon">&#9776 </div>
+            <!--- la seccion del header inicia aqui -->
+
+    <header>
+
+        <a href="#" class="logo"> <span> Homologaciones </span> Universidad Distrital</a>
+        
+        <nav class="navbar">
+            <ul class="navbar__menu">
+                <li class="navbar__menu--item">
+                    <a href="#Inicio" class="navbar__menu--link">Inicio</a>
+                </li>
+                <li class="navbar__menu--item">
+                    <a href="#Homologaciones" class="navbar__menu--link">Homologaciones</a>
+                </li>
+                <li class="navbar__menu--item">
+                    <a href="#Solicitudes" class="navbar__menu--link">Solicitudes</a>
+                </li>
+                <li class="navbar__menu--item">
+                    <a href="#Usuarios" class="navbar__menu--link">Usuarios</a>
+                </li>
+                <li class="navbar__menu--item">
+                    <a href="#Configuracion" class="navbar__menu--link">Configuración</a>
+                </li>
+            </ul>
+        </nav>
+
+            <div class="iconos" >
+                <a href="https://www.facebook.com/udistrital/" target="_blank"><img src="src/icons8-facebook.svg" alt="Facebook"></a>
+                <a href="https://twitter.com/udistrital?lang=es" target="_blank"><img src="src/icons8-twitter.svg" alt="Twitter"></a>
+                <a href="https://www.instagram.com/udistrital/?hl=es-la" target="_blank"><img src="src/icons8-instagram.svg" alt="Instagram"></a>
+                <a href="https://www.youtube.com/user/udistritaltv" target="_blank"><img src="src/icons8-youtube-play.svg" alt="Youtube"></a>
+                <a href="https://ti.udistrital.edu.co/servicio/sistema-de-gestion-academica" target="_blank"><img src="src/icons8-universidad-64.png" alt="UD"></a>
+            </div>
+
+    </header>
+    
+   
+    <main>
+        <div class="main">
+            <!-- Agrega un botón para ejecutar el script -->
+            <button id="btnEjecutarScript">Ejecutar Script</button>
+
+            <!-- Contenedor para mostrar la información obtenida de la API -->
+            <div id="infoContainer"></div>
+        </div>
+    </main>
+
+
+    <script>
+    document.getElementById('btnEjecutarScript').addEventListener('click', () => {
+        ejecutarScript();
+    });
+
+    async function ejecutarScript() {
+        try {
+            const estudianteResponse = await fetch('http://localhost:3000/api/estudiante'); // Cambia la URL según la configuración de tu servidor
+            const materiasResponse = await fetch('http://localhost:3000/api/materias'); // Cambia la URL según la configuración de tu servidor
+            const comparacionResponse = await fetch('http://localhost:3000/api/comparar'); // Cambia la URL según la configuración de tu servidor
+
+            const estudianteData = await estudianteResponse.json();
+            const materiasData = await materiasResponse.json();
+            const comparacionData = await comparacionResponse.json();
+
+            mostrarInformacion(estudianteData, materiasData, comparacionData);
+        } catch (error) {
+            console.error('Error al ejecutar el script:', error);
+        }
+    }
+
+    function mostrarInformacion(estudiante, materias, comparacion) { // Muestra la información obtenida de la API en el contenedor
+        const infoContainer = document.getElementById('infoContainer');
+        infoContainer.innerHTML = `
+            <h2>Información del Estudiante</h2>
+            <pre>${JSON.stringify(estudiante, null, 2)}</pre>
+            
+            <h2>Información de Materias</h2>
+            <pre>${JSON.stringify(materias, null, 2)}</pre>
+
+            <h2>Resultado de la Comparación</h2>
+            <pre>${JSON.stringify(comparacion, null, 2)}</pre>
+        `;
+    }
+
+</script>
+
+    
+    
+</body>
+
+<script src="./scripts/script.js"></script>
+
+</html>

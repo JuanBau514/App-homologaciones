@@ -1,0 +1,8 @@
+{
+  "C=C3=B3digo": "201525780=\n92",
+  "Carrera =": "578 - TEC=\nNOLOGIA EN SISTEMATIZACION DE DATOS (CICLOS PROPEDEUTICOS)",
+  "Plan de E=\nstudios": "239",
+  "E-Mail <=\n/td>": "wmartinez=\nandres41@gmail.com",
+  "Fecha de =\nnacimiento": "1993-12-1=\n0",
+  "Promedio =\nAcumulado": "3.63"
+}

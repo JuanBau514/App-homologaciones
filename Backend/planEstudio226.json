@@ -1,0 +1,492 @@
+[
+    {
+     "codMateria": "1",
+     "nombreMateria": "CÁLCULO DIFERENCIAL",
+     "nota": null,
+     "creditos": null,
+     "clasificacion": null,
+     "year": null
+    },
+    {
+     "codMateria": "4",
+     "nombreMateria": "CÁTEDRA FRANCISCO JOSÉ DE CALDAS",
+     "nota": null,
+     "creditos": null,
+     "clasificacion": null,
+     "year": null
+    },
+    {
+     "codMateria": "9",
+     "nombreMateria": "ÁLGEBRA LINEAL",
+     "nota": null,
+      "creditos": null,
+     "clasificacion": null,
+     "year": null
+    },
+
+  {
+    "codMateria": "12",
+    "nombreMateria": "CÁTEDRA DEMOCRACIA Y CIUDADANÍA",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1054",
+    "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS I",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1507",
+    "nombreMateria": "INTRODUCCIÓN A ALGORITMOS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1508",
+    "nombreMateria": "LÓGICA MATEMÁTICA",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "3",
+    "nombreMateria": "FÍSICA I: MECÁNICA NEWTONIANA",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "7",
+    "nombreMateria": "CÁLCULO INTEGRAL",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1056",
+    "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS II",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1072",
+    "nombreMateria": "ADMINISTRACIÓN",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1082",
+    "nombreMateria": "CÁTEDRA DE CONTEXTO",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1513",
+    "nombreMateria": "ESTRUCTURA DE DATOS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1514",
+    "nombreMateria": "PROGRAMACIÓN ORIENTADA A OBJETOS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+     "codMateria": "1503",
+     "nombreMateria": "CONTABILIDAD GENERAL",
+     "nota": null,
+      "creditos": null,
+     "clasificacion": null,
+     "year": null
+  },
+  {
+    "codMateria": "13",
+    "nombreMateria": "FÍSICA II: ELECTROMAGNETISMO",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1060",
+    "nombreMateria": "CIENCIA TECNOLOGÍA Y SOCIEDAD",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1509",
+    "nombreMateria": "FUNDAMENTOS DE ORGANIZACIÓN",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1518",
+    "nombreMateria": "PROGRAMACIÓN MULTINIVEL",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1519",
+    "nombreMateria": "BASES DE DATOS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "9901",
+    "nombreMateria": "SEGUNDA LENGUA I - INGLÉS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+     "codMateria": "1512",
+     "nombreMateria": "MATEMATICAS ESPECIALES",
+     "nota": null,
+      "creditos": null,
+     "clasificacion": null,
+     "year": null
+  },
+  {
+     "codMateria": "1515",
+     "nombreMateria": "ANÁLISIS Y MÉTODOS NUMÉRICOS",
+     "nota": null,
+     "creditos": null,
+     "clasificacion": null,
+     "year": null
+  },
+  {
+     "codMateria": "1138",
+     "nombreMateria": "EMPRENDIMIENTO",
+     "nota": null,
+     "creditos": null,
+     "clasificacion": null,
+     "year": null
+  },
+  {
+     "codMateria": "1510",
+     "nombreMateria": "FUNDAMENTOS DE ECONOMÍA",
+     "nota": null,
+      "creditos": null,
+     "clasificacion": null,
+     "year": null
+  },
+  {
+    "codMateria": "1075",
+    "nombreMateria": "ÉTICA Y SOCIEDAD",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1511",
+    "nombreMateria": "TIC'S EN LAS ORGANIZACIONES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1524",
+    "nombreMateria": "PROGRAMACIÓN AVANZADA",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1526",
+    "nombreMateria": "DISEÑO LÓGICO",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "9902",
+    "nombreMateria": "SEGUNDA LENGUA II - INGLES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+     "codMateria": "1536",
+     "nombreMateria": "PROGRAMACION WEB",
+     "nota": null,
+      "creditos": null,
+     "clasificacion": null,
+     "year": null
+  },
+  {
+    "codMateria": "1516",
+    "nombreMateria": "ANÁLISIS SOCIAL COLOMBIANO",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1531",
+    "nombreMateria": "ANÁLISIS DE SISTEMAS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1533",
+    "nombreMateria": "SISTEMAS OPERACIONALES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1535",
+    "nombreMateria": "TRANSMISIÓN DE DATOS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1537",
+    "nombreMateria": "TALLER DE INVESTIGACIÓN",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "7202",
+    "nombreMateria": "APLICACIONES PARA INTERNET",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+     "codMateria": "7204",
+     "nombreMateria": "PROTOCOLOS DE COMUNICACIÓN",
+     "nota": null,
+      "creditos": null,
+     "clasificacion": null,
+     "year": null
+  },
+  {
+    "codMateria": "1446",
+    "nombreMateria": "TRABAJO DE GRADO TECNOLÓGICO",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1532",
+    "nombreMateria": "INTELIGENCIA ARTIFICIAL",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1539",
+    "nombreMateria": "ARQUITECTURA DE COMPUTADORES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1540",
+    "nombreMateria": "GLOBALIZACIÓN",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1541",
+    "nombreMateria": "FUNDAMENTOS DE TELEMÁTICA",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1542",
+    "nombreMateria": "PROGRAMACIÓN POR COMPONENTES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "9903",
+    "nombreMateria": "SEGUNDA LENGUA III - INGLÉS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+     "codMateria": "7206",
+     "nombreMateria": "REGULACION PARA TELECOMUNICACIONES",
+     "nota": null,
+      "creditos": null,
+     "clasificacion": null,
+     "year": null
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "88",
+    "nombreMateria": "ECUACIONES DIFERENCIALES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1525",
+    "nombreMateria": "BASES DE DATOS AVANZADAS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "1538",
+    "nombreMateria": "INGENIERÍA DE SOFTWARE",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  }
+    
+]
