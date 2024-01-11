@@ -8,10 +8,10 @@ export default function Home() {
           <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-4">
-                <h1 className="text-3xl font-bold tracking-tighter text-[#8B4000] sm:text-5xl xl:text-6xl/none">
-                  Bienvenido a Nuestro Sistema de Gestión de Homologaciones
+                <h1 className="text-3xl font-bold tracking-tighter text-[#34aca6] sm:text-5xl xl:text-6xl/none">
+                  Sistema de Gestión de Homologaciones
                 </h1>
-                <p className="max-w-[600px] text-[#55555] md:text-xl">
+                <p className="max-w-[600px] text-[#Ff0000] md:text-xl">
                   Proporcionamos los mejores servicios para ayudarte a lograr
                   tus objetivos académicos. Comencemos el viaje juntos.
                 </p>
