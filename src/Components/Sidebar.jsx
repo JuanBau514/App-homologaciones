@@ -1,67 +1,106 @@
-import { useState } from "react";
+import { MoreVertical, ChevronLast, ChevronFirst } from "lucide-react";
+import { useContext, createContext, useState } from "react";
+
 import "./navbar.css";
 
-export default function Navbar() {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+const SidebarContext = createContext();
 
-  // Función para cambiar el estado y mostrar/ocultar la barra
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
+export default function Sidebar({ children }) {
+  const [expanded, setExpanded] = useState(true);
 
   return (
-    <div>
-      <div
-        id="barra-menu"
-        className={`barra bar-menu menu-icon ${isMenuOpen ? "active" : ""}`}
-        onClick={toggleMenu}
-      ></div>
-
-      <header className={`${isMenuOpen ? "active" : ""}`}>
-        <a href="#" className="logo">
-          <span> Bienvenido </span>
-        </a>
-
-        <nav className="navbar">
-          <ul className="navbar__menu">
-            <li className="navbar__menu--item">
-              <a href="/dashboard/home" className="navbar__menu--link">
-                Inicio
-              </a>
-            </li>
-            <li className="navbar__menu--item">
-              <a href="/dashboard/adminEmpl" className="navbar__menu--link">
-                Administrar Empleados
-              </a>
-            </li>
-            <li className="navbar__menu--item">
-              <a href="/dashboard/adminClients" className="navbar__menu--link">
-                Homologaciones
-              </a>
-            </li>
-            <li className="navbar__menu--item">
-              <a href="/dashboard/adminCars" className="navbar__menu--link">
-                Solicitudes
-              </a>
-            </li>
-            <li className="navbar__menu--item">
-              <a href="/dashboard/adminTrans" className="navbar__menu--link">
-                Usuarios
-              </a>
-            </li>
-            <li className="navbar__menu--item">
-              <a href="/dashboard/adminOffices" className="navbar__menu--link">
-                Configuracion
-              </a>
-            </li>
-          </ul>
-        </nav>
-
-        <div className="navbar__toggle" id="mobile-menu">
-          <span className="bar"></span> <span className="bar"></span>{" "}
-          <span className="bar"></span>
+    <aside className="">
+      <nav className="Navegador h-full w-1/8 flex flex-col bg-white">
+        <div className=" p-10 pb-20 flex justify-between items-center">
+          <img
+            src="/src/assets/logoipsum-214.svg"
+            className={`overflow-hidden transition-all ${
+              expanded ? "w-30" : "w-0"
+            }`}
+            alt=""
+          />
+          <button
+            onClick={() => setExpanded((curr) => !curr)}
+            className="p-1 w-1/8 rounded-lg bg-gray-50 hover:bg-gray-100 border-none"
+          >
+            <div className="">
+              {expanded ? <ChevronFirst /> : <ChevronLast />}
+            </div>
+          </button>
         </div>
-      </header>
-    </div>
+
+        <SidebarContext.Provider value={{ expanded }}>
+          <ul className="flex-1 px-8">{children}</ul>
+        </SidebarContext.Provider>
+
+        <div className="border-t flex p-3">
+          <img
+            src="https://ui-avatars.com/api/?background=c7d2fe&color=3730a3&bold=true"
+            alt="usuario"
+            className="w-10 h-10 rounded-md"
+          />
+          <div
+            className={`
+              flex justify-between items-center
+              overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"}
+          `}
+          >
+            <div className="leading-4">
+              <h4 className="font-semibold">John Doe</h4>
+              <span className="text-xs text-gray-600">johndoe@gmail.com</span>
+            </div>
+            <MoreVertical size={20} />
+          </div>
+        </div>
+      </nav>
+    </aside>
+  );
+}
+
+export function SidebarItem({ icon, text, active, alert }) {
+  const { expanded } = useContext(SidebarContext);
+
+  return (
+    <li
+      className={`
+        relative flex items-center py-3 px-1 my-1
+        font-medium rounded-md cursor-pointer
+        transition-colors group
+        ${
+          active
+            ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
+            : "hover:bg-indigo-50 text-gray-600"
+        }
+    `}
+    >
+      {icon}
+      <span
+        className={`overflow-hidden transition-all ${
+          expanded ? "w-35 ml-4" : "w-0"
+        }`}
+      >
+        {text}
+      </span>
+      {alert && (
+        <div
+          className={`absolute right-2 w-4 h-2 rounded bg-indigo-400 ${
+            expanded ? "" : "top-2"
+          }`}
+        />
+      )}
+
+      {!expanded && (
+        <div
+          className={`
+          absolute left-full rounded-md px-2 py-1 ml-6
+          bg-indigo-100 text-indigo-800 text-sm
+          invisible opacity-20 -translate-x-3 transition-all
+          group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
+      `}
+        >
+          {text}
+        </div>
+      )}
+    </li>
   );
 }

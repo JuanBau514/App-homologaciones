@@ -1,12 +1,11 @@
-import "./App.css";
-import Sidebar from "./Components/Sidebar";
+import Navbar from "./Components/Navbar";
 import Mainpage from "./Pages/mainPage";
 
 function App() {
   return (
     <>
-      <main className="flex-1">
-        <Sidebar />
+      <main className="App">
+        <Navbar />
         <Mainpage />
       </main>
     </>
