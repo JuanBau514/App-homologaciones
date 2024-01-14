@@ -1,32 +1,61 @@
-import Sidebar, { SidebarItem } from "./Sidebar";
-import Mainpage from "../Pages/mainPage";
+import { School2, LayoutGrid, GitCompareArrows, Menu } from "lucide-react";
+import { useState } from "react";
+import "./navbar.css";
 
-import {
-  LifeBuoy,
-  Receipt,
-  Boxes,
-  Package,
-  UserCircle,
-  BarChart3,
-  LayoutDashboard,
-  Settings,
-} from "lucide-react";
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-function Navbar() {
+  const toggleMenu = () => {
+    setMenuOpen((prevMenuOpen) => !prevMenuOpen);
+  };
+
   return (
-    <>
-      <Sidebar>
-        <SidebarItem icon={<LayoutDashboard side={20} />} text="Dashboard" />
-        <SidebarItem icon={<BarChart3 side={20} />} text="Statistics" alent />
-        <SidebarItem icon={<UserCircle side={20} />} text="Users" />
-        <SidebarItem icon={<Boxes side={20} />} text="Inventory" />
-        <SidebarItem icon={<Package side={20} />} text="Orders" alent />
-        <SidebarItem icon={<Receipt side={20} />} text="Products" />
-        <SidebarItem icon={<LifeBuoy side={20} />} text="Help" />
-        <SidebarItem icon={<Settings side={20} />} text="Settings" />
-      </Sidebar>
-    </>
+    <div className={`sidebar ${menuOpen ? "menu-open" : "menu-close"}`}>
+      <div className="logo-detalles">
+        <i>
+          <School2 className="dashboard-icon" />
+        </i>
+        <span className="logo-name">U.Distrital</span>
+      </div>
+      <ul className="nav-links">
+        <li>
+          <a href="/dashboard">
+            <i>
+              <LayoutGrid className="dashboard-icon" />
+            </i>
+            <span className="link_name">Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="Homologaciones">
+            <i>
+              <GitCompareArrows className="dashboard-icon" />
+            </i>
+            <span className="link_name">Solicitudes</span>
+          </a>
+        </li>
+        <li>
+          <a href="Homologaciones">
+            <i>
+              <GitCompareArrows className="dashboard-icon" />
+            </i>
+            <span className="link_name">Usuarios</span>
+          </a>
+        </li>
+        <li>
+          <a href="Homologaciones">
+            <i>
+              <GitCompareArrows className="dashboard-icon" />
+            </i>
+            <span className="link_name">Configuracion</span>
+          </a>
+        </li>
+      </ul>
+      <div className="menu-toggle" onClick={toggleMenu}>
+        <i>
+          <Menu className="dashboard-icon-Menu" />
+        </i>
+      </div>
+    </div>
   );
 }
-
-export default Navbar;
