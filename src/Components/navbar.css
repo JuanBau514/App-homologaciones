@@ -103,11 +103,14 @@
     border-radius: 10px;
     margin-bottom: 1.5rem;
     transition: background 0.3s ease;
+    color: #fcf2e8;
+
 }
 
 .nav-links li:hover {
     cursor: pointer;
-    background: #45b3bb;
+    background: #8B0000;
+    color: #fff;
 }
 
 .nav-links hr {
@@ -128,6 +131,8 @@
     white-space: nowrap;
     transition: opacity 0.5s ease;
     display: flex;
+    color: #fcf2e8;
+
     align-items: center;
 }
 
@@ -136,7 +141,7 @@
     min-width: 60px;
     text-align: center;
     line-height: 10px;
-    color: rgb(54, 9, 255);
+    color: #8B0000;
     font-size: 20px;
     transition: visibility 1s, opacity 0.5s ease;
 }
@@ -154,28 +159,44 @@
     transition: opacity 0.5s ease;
 }
 
+.sidebar.sidebar.menu-close {
+    background: #fcf2e8;
+    color: #fff;
 
+}
 
 .sidebar.menu-close .nav-links .link_name {
     opacity: 0;
+    color: #fcf2e8;
+
 }
 
 .sidebar.menu-close .nav-links .link_name:hover {
     opacity: 1;
     visibility: visible;
+    color: #fff;
 }
 
 
 .sidebar.menu-close .nav-links li i {
     visibility: visible;
-    color: #000000;
+    color: #8B0000;
+
+    margin-left: 0.5rem;
     min-width: 70px;
     padding-left: 120px;
+
+}
+
+.sidebar.menu-close .nav-links li i:hover {
+    color: #fcf2e8;
 }
 
 .sidebar.menu-open .nav-links li a:hover .link_name,
 .sidebar.menu-open .nav-links li i:hover {
     opacity: 1;
+    color: #fcf2e8;
+
 }
 
 .dashboard-icon-Menu {
