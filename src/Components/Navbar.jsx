@@ -1,4 +1,12 @@
-import { School2, LayoutGrid, GitCompareArrows, Menu } from "lucide-react";
+import {
+  School2,
+  LayoutGrid,
+  GitCompareArrows,
+  Menu,
+  Settings,
+  UserRoundCog,
+  CheckCircle,
+} from "lucide-react";
 import { useState } from "react";
 import "./navbar.css";
 
@@ -19,7 +27,7 @@ export default function Navbar() {
       </div>
       <ul className="nav-links">
         <li>
-          <a href="/dashboard">
+          <a href="/src/Pages/mainPage.jsx">
             <i>
               <LayoutGrid className="dashboard-icon" />
             </i>
@@ -37,7 +45,15 @@ export default function Navbar() {
         <li>
           <a href="Homologaciones">
             <i>
-              <GitCompareArrows className="dashboard-icon" />
+              <CheckCircle className="dashboard-icon" />
+            </i>
+            <span className="link_name">Homologacion</span>
+          </a>
+        </li>
+        <li>
+          <a href="Homologaciones">
+            <i>
+              <UserRoundCog className="dashboard-icon" />
             </i>
             <span className="link_name">Usuarios</span>
           </a>
@@ -45,7 +61,7 @@ export default function Navbar() {
         <li>
           <a href="Homologaciones">
             <i>
-              <GitCompareArrows className="dashboard-icon" />
+              <Settings className="dashboard-icon" />
             </i>
             <span className="link_name">Configuracion</span>
           </a>

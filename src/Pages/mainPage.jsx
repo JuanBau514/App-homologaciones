@@ -1,6 +1,6 @@
 export default function Mainpage() {
   return (
-    <main className="flex flex-col items-center justify-center py-20 md:py-24 lg:py-40 bg-[#fcf2e8] dark:bg-[#0b162a]">
+    <main className="flex flex-col items-center justify-center py-44 md:px-20 bg-[#fcf2e8] dark:bg-[#0b162a] ml-16">
       <section className="w-full px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
           <div className="flex flex-col justify-center space-y-4">
