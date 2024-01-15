@@ -35,7 +35,7 @@ export default function Navbar() {
           </a>
         </li>
         <li>
-          <a href="Homologaciones">
+          <a href="../Pages/Homologaciones/Homologaciones.jsx">
             <i>
               <GitCompareArrows className="dashboard-icon" />
             </i>

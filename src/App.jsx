@@ -1,6 +1,6 @@
 import Navbar from "./Components/Navbar";
-import Mainpage from "./Pages/mainPage";
-import Homologaciones from "./Pages/Homologaciones";
+import Mainpage from "./Pages/mainPage/mainPage";
+import Usuarios from "./Pages/Usuarios/Usuarios";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <main className="App">
         <Navbar />
         <Mainpage />
-        <Homologaciones />
+        <Usuarios />
       </main>
     </>
   );
