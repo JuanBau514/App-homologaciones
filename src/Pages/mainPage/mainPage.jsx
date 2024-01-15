@@ -1,8 +1,13 @@
+import Navbar from "../../Components/Navbar";
+import "./main.css";
+
 export default function Mainpage() {
   return (
-    <main className="flex flex-col items-center justify-center py-44 md:px-20 bg-[#fcf2e8] dark:bg-[#0b162a] ml-16">
-      <section className="w-full px-4 md:px-6">
-        <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+    <main className="main flex flex-col items-center justify-center md:px-20 bg-[#fcf2e8] dark:bg-[#0b162a] ml-16">
+      <Navbar />
+
+      <section className="w-full px-6 md:px-6">
+        <div className="grid gap-4 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter text-[#8B0000] sm:text-5xl xl:text-6xl/none">

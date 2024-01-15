@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import "./navbar.css";
+import { Link, Outlet } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,44 +28,44 @@ export default function Navbar() {
       </div>
       <ul className="nav-links">
         <li>
-          <a href="/src/Pages/mainPage.jsx">
+          <Link to="/">
             <i>
               <LayoutGrid className="dashboard-icon" />
             </i>
             <span className="link_name">Inicio</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="../Pages/Homologaciones/Homologaciones.jsx">
+          <Link to="/Solicitudes">
             <i>
               <GitCompareArrows className="dashboard-icon" />
             </i>
             <span className="link_name">Solicitudes</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="Homologaciones">
+          <Link to="/Homologaciones">
             <i>
               <CheckCircle className="dashboard-icon" />
             </i>
             <span className="link_name">Homologacion</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="Homologaciones">
+          <Link to="/Usuarios">
             <i>
               <UserRoundCog className="dashboard-icon" />
             </i>
             <span className="link_name">Usuarios</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="Homologaciones">
+          <Link to="/Configuracion">
             <i>
               <Settings className="dashboard-icon" />
             </i>
             <span className="link_name">Configuracion</span>
-          </a>
+          </Link>
         </li>
       </ul>
       <div className="menu-toggle" onClick={toggleMenu}>
@@ -72,6 +73,7 @@ export default function Navbar() {
           <Menu className="dashboard-icon-Menu" />
         </i>
       </div>
+      <Outlet />
     </div>
   );
 }
