@@ -1,8 +1,10 @@
 import "./styleEmploye.css";
+import Navbar from "../../Components/Navbar";
 
 export default function Usuarios() {
   return (
     <div>
+      <Navbar></Navbar>
       <section className="empleados" id="empleados">
         <div className="tituloEmpleados">
           <span> Empleados </span>

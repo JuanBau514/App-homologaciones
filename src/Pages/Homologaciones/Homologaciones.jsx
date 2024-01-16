@@ -1,6 +1,9 @@
+import Navbar from "../../Components/Navbar";
+
 export default function Homologacion() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#fcf2e8] dark:bg-gray-900">
+      <Navbar />
       <div className="w-full max-w-4xl mx-auto flex flex-row justify-between gap-4">
         <div className="flex-1 flex flex-col items-center justify-center p-8 bg-white border border-gray-200 rounded-md shadow-md dark:bg-gray-800 dark:border-gray-700 m-4 w-[800px] h-[600px]">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
