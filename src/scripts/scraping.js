@@ -26,10 +26,10 @@ function limpiarNombreMateria(nombre) {
     return nombre.trim(); // Eliminar espacios en blanco al principio y al final
 }
 
-async function scraping_materias() {
-    const data = await readFile('./araña/Andres.html', {
+async function scraping_materias(archivoReact) {
+    const data = await readFile(archivoReact.path, {
         encoding: 'utf8'
-    });
+    }); // Ajusta la ruta según la ubicación real del archivo
     const $ = load(data);
     const tablaInteres = $('td');
     const materias = [];
