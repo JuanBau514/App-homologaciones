@@ -3,6 +3,7 @@ import Usuarios from "./Pages/Usuarios/Usuarios";
 import Homologacion from "./Pages/Homologaciones/Homologaciones";
 import Configuracion from "./Pages/Configuracion/Configuracion";
 import Solicitudes from "./Pages/Solicitudes/adminSolicitudes";
+import MateriasEstudiante from "./Pages/Homologaciones/materiasEstudiantes";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/Homologaciones" element={<Homologacion />} />
           <Route path="/Usuarios" element={<Usuarios />} />
           <Route path="/Configuracion" element={<Configuracion />} />
+          <Route path="/materiasEstudiantes" element={<MateriasEstudiante />} />
           <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>
       </main>
