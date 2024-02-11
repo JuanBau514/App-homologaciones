@@ -1,26 +1,30 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Navbar from "../../Components/Navbar";
 import { Link } from "react-router-dom";
-
-var archivoMaterias = "";
+import axios from "axios";
 
 export default function Homologacion() {
-  const [isFileLoaded, setIsFileLoaded] = useState(false);
-  const [fileContent, setFileContent] = useState("");
+  const [archivoSeleccionado, setArchivoSeleccionado] = useState(null);
 
-  const cargarArchivo = (event) => {
-    const archivo = event.target.files[0];
-    if (archivo) {
-      const lectura = new FileReader();
-      lectura.onload = (e) => {
-        const contenido = e.target.result;
-        setFileContent(contenido);
-        setIsFileLoaded(true); // Establecer que el archivo se ha cargado
-      };
-      lectura.readAsText(archivo);
-      archivoMaterias = archivo;
+  const handleArchivoSeleccionado = (event) => {
+    setArchivoSeleccionado(event.target.files[0]);
+  };
+
+  const enviarArchivoAlServidor = async () => {
+    try {
+      const formData = new FormData();
+      formData.append("archivo", archivoSeleccionado);
+
+      await axios.post("http://localhost:3000/api/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      console.log("Archivo enviado correctamente al servidor.");
+    } catch (error) {
+      console.error("Error al enviar el archivo al servidor:", error);
     }
-    console.log(archivoMaterias);
   };
 
   return (
@@ -50,8 +54,15 @@ export default function Homologacion() {
             id="file-upload"
             accept=".html"
             className="hidden"
-            onChange={cargarArchivo}
+            onChange={handleArchivoSeleccionado}
           />
+
+          <button
+            className="mt-4 bg-green-400 text-black py-2 px-4 rounded-md transition duration-300 hover:bg-sky-500"
+            onClick={enviarArchivoAlServidor}
+          >
+            Enviar archivo al servidor
+          </button>
 
           <div className="mt-8 relative">
             <input
@@ -63,7 +74,7 @@ export default function Homologacion() {
             </div>
           </div>
           <a
-            className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+            className="mt-4 bg-green-400 text-black py-2 px-4 rounded-md transition duration-300 hover:bg-sky-500 "
             href="materiasEstudiantes"
           >
             Mostrar materias homologadas
@@ -76,19 +87,11 @@ export default function Homologacion() {
             Vista previa del archivo
           </h2>
           <div className="mt-4 p-4 bg-gray-100 rounded-md dark:bg-gray-700">
-            <p className="text-gray-900 dark:text-gray-100">{fileContent}</p>{" "}
-            {
-              // Mostrar el contenido del archivo si se ha cargado
-              isFileLoaded ? (
-                <p className="text-gray-900 dark:text-gray-100">
-                  {fileContent && <Link to="./materiasEstudiantes.jsx"></Link>}
-                </p>
-              ) : (
-                <p className="text-gray-500 dark:text-gray-400">
-                  No se ha cargado ningun archivo
-                </p>
-              )
-            }
+            <p className="text-gray-900 dark:text-gray-100">
+              {archivoSeleccionado
+                ? `Archivo seleccionado: ${archivoSeleccionado.name}`
+                : "Ningún archivo seleccionado"}
+            </p>
           </div>
         </div>
       </div>
