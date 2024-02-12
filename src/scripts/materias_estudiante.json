@@ -1,0 +1,178 @@
+[
+  {
+    "codMateria": "1",
+    "nombreMateria": "CÁLCULO DIFERENCIAL",
+    "nota": 28,
+    "creditos": 4,
+    "clasificacion": "OB",
+    "year": "2016"
+  },
+  {
+    "codMateria": "1",
+    "nombreMateria": "CÁLCULO DIFERENCIAL",
+    "nota": 25,
+    "creditos": 4,
+    "clasificacion": "OB",
+    "year": "2015"
+  },
+  {
+    "codMateria": "4",
+    "nombreMateria": "CÁTEDRA FRANCISCO JOSÉ DE CALDAS",
+    "nota": 36,
+    "creditos": 1,
+    "clasificacion": "OC",
+    "year": "2016"
+  },
+  {
+    "codMateria": "4",
+    "nombreMateria": "CÁTEDRA FRANCISCO JOSÉ DE CALDAS",
+    "nota": 19,
+    "creditos": 1,
+    "clasificacion": "OC",
+    "year": "2015"
+  },
+  {
+    "codMateria": "9",
+    "nombreMateria": "ÁLGEBRA LINEAL",
+    "nota": 37,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2016"
+  },
+  {
+    "codMateria": "9",
+    "nombreMateria": "ÁLGEBRA LINEAL",
+    "nota": 24,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2015"
+  },
+  {
+    "codMateria": "12",
+    "nombreMateria": "CÁTEDRA DEMOCRACIA Y CIUDADANÍA",
+    "nota": 39,
+    "creditos": 1,
+    "clasificacion": "OC",
+    "year": "2015"
+  },
+  {
+    "codMateria": "1054",
+    "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS I",
+    "nota": 39,
+    "creditos": 3,
+    "clasificacion": "OC",
+    "year": "2015"
+  },
+  {
+    "codMateria": "1507",
+    "nombreMateria": "INTRODUCCIÓN A ALGORITMOS",
+    "nota": 39,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2016"
+  },
+  {
+    "codMateria": "1507",
+    "nombreMateria": "INTRODUCCIÓN A ALGORITMOS",
+    "nota": 11,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2015"
+  },
+  {
+    "codMateria": "1508",
+    "nombreMateria": "LÓGICA MATEMÁTICA",
+    "nota": 33,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2015"
+  },
+  {
+    "codMateria": "1056",
+    "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS II",
+    "nota": 33,
+    "creditos": 2,
+    "clasificacion": "OC",
+    "year": "2016"
+  },
+  {
+    "codMateria": "1072",
+    "nombreMateria": "ADMINISTRACIÓN",
+    "nota": 41,
+    "creditos": 3,
+    "clasificacion": "OC",
+    "year": "2016"
+  },
+  {
+    "codMateria": "1082",
+    "nombreMateria": "CÁTEDRA DE CONTEXTO",
+    "nota": 44,
+    "creditos": 1,
+    "clasificacion": "OC",
+    "year": "2016"
+  },
+  {
+    "codMateria": "1514",
+    "nombreMateria": "PROGRAMACIÓN ORIENTADA A OBJETOS",
+    "nota": 33,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2016"
+  },
+  {
+    "codMateria": "1060",
+    "nombreMateria": "CIENCIA TECNOLOGÍA Y SOCIEDAD",
+    "nota": 43,
+    "creditos": 2,
+    "clasificacion": "OC",
+    "year": "2016"
+  },
+  {
+    "codMateria": "9901",
+    "nombreMateria": "SEGUNDA LENGUA I - INGLÉS",
+    "nota": 29,
+    "creditos": 2,
+    "clasificacion": "OC",
+    "year": "2016"
+  },
+  {
+    "codMateria": "1511",
+    "nombreMateria": "TIC'S EN LAS ORGANIZACIONES",
+    "nota": 34,
+    "creditos": 2,
+    "clasificacion": "EI",
+    "year": "2016"
+  },
+  {
+    "codMateria": "OB",
+    "nombreMateria": "55",
+    "nota": 0,
+    "creditos": 0,
+    "clasificacion": "21.8%",
+    "year": "21.8%"
+  },
+  {
+    "codMateria": "OC",
+    "nombreMateria": "21",
+    "nota": 0,
+    "creditos": 0,
+    "clasificacion": "61.9%",
+    "year": "61.9%"
+  },
+  {
+    "codMateria": "EI",
+    "nombreMateria": "19",
+    "nota": 0,
+    "creditos": 0,
+    "clasificacion": "10.5%",
+    "year": "10.5%"
+  },
+  {
+    "codMateria": "EE",
+    "nombreMateria": "4",
+    "nota": 0,
+    "creditos": 4,
+    "clasificacion": "0%",
+    "year": "0%"
+  }
+]

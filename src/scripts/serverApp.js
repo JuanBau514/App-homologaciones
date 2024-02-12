@@ -1,9 +1,14 @@
 import express from 'express';
 import cors from 'cors';
 import multer from 'multer';
-import fs from 'fs/promises';
+import compararResultado from './Comparar.js';
 import {
-    scraping_info_estudiante
+    readFile,
+    writeFile
+} from 'fs/promises';
+import {
+    scraping_info_estudiante,
+    scraping_materias
 } from './scraping.js';
 
 const app = express();
@@ -21,12 +26,43 @@ const upload = multer({
 app.post('/api/upload', upload.single('archivo'), async (req, res) => {
     try {
         const file = req.file; // Obtener el archivo del cuerpo de la solicitud
-        const htmlContent = await fs.readFile(file.path, {
+        const htmlContent = await readFile(file.path, {
             encoding: 'utf-8'
         }); // Leer el contenido del archivo
         const datosEstudiante = await scraping_info_estudiante(htmlContent);
         console.log('Datos del estudiante:', datosEstudiante);
-        res.status(200).send('Archivo recibido y scraping realizado correctamente'); // Enviar una respuesta de éxito
+
+        const datosMaterias = await scraping_materias(htmlContent);
+        console.log('Materias:', datosMaterias);
+
+        const nombreArchivo = 'materias_estudiante.json';
+
+        // Convertir los datos de materias a un formato compatible con el archivo JSON
+        const datosMateriasCompatibles = datosMaterias.map(materia => ({
+            codMateria: materia.codMateria,
+            nombreMateria: materia.nombreMateria,
+            nota: materia.nota,
+            creditos: materia.creditos,
+            clasificacion: materia.clasificacion,
+            year: materia.year
+        }));
+
+        // Escribir los datos compatibles en el archivo materias_estudiante.json
+        await writeFile(nombreArchivo, JSON.stringify(datosMateriasCompatibles, null, 2));
+
+        // Obtener el resultado de la comparación desde comparar.js después de guardar los datos en el archivo
+        const resultadoComparacion = compararResultado();
+        console.log('Resultado de la comparación:', resultadoComparacion);
+
+        res.json({
+            estudiante: datosEstudiante,
+            materias: datosMaterias,
+            completadas: resultadoComparacion.completadas,
+            faltantes: resultadoComparacion.faltantes,
+            mensaje: 'Datos procesados correctamente.',
+        });
+
+
     } catch (error) {
         console.error('Error al procesar el archivo:', error);
         res.status(500).json({
