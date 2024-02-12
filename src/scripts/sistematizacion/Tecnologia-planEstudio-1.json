@@ -1,0 +1,564 @@
+[
+  {
+    "codMateria": "37801030",
+    "nombreMateria": "LÓGICA MATEMÁTICA",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37801043",
+    "nombreMateria": "CALCULO DIFERENCIAL",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37801048",
+    "nombreMateria": "ÁLGEBRA LINEAL",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+
+  {
+    "codMateria": "37801060",
+    "nombreMateria": "INTRODUCCIÓN A ALGORITMOS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37801081",
+    "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS I",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37801082",
+    "nombreMateria": "CATEDRA FRANCISCO JOSE DE CALDAS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37802030",
+    "nombreMateria": "ESTRUCTURA DE DATOS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "37802048",
+    "nombreMateria": "FÍSICA I: MECÁNICA NEWTONIANA",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37802043",
+    "nombreMateria": "CÁLCULO INTEGRAL",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37802081",
+    "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS II",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37803043",
+    "nombreMateria": "CALCULO VECTORIAL",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37803030",
+    "nombreMateria": "BASES DE DATOS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37802082",
+    "nombreMateria": "TEORIA GENERAL DE SISTEMAS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37802060",
+    "nombreMateria": "PROGRAMACIÓN ORIENTADA POR OBJETOS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "37804048",
+    "nombreMateria": "FISICA OPTICA Y ONDAS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37803048",
+    "nombreMateria": "FÍSICA II: ELECTROMAGNETISMO",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37803081",
+    "nombreMateria": "CIENCIA TECNOLOGÍA Y SOCIEDAD",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37804043",
+    "nombreMateria": "ECUACIONES DIFERENCIALES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37803060",
+    "nombreMateria": "PROGRAMACIÓN MULTINIVEL",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37804030",
+    "nombreMateria": "BASES DE DATOS AVANZADAS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37804081",
+    "nombreMateria": "ETICA PROFESIONAL",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "37805043",
+    "nombreMateria": "MATEMATICAS ESPECIALES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37805048",
+    "nombreMateria": "FÍSICA MODERNA",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37805060",
+    "nombreMateria": "ANÁLISIS Y DISEÑO DE SISTEMAS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37805070",
+    "nombreMateria": "TRANSMISIÓN DE DATOS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37805081",
+    "nombreMateria": "GLOBALIZACION",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37806019",
+    "nombreMateria": "CONTABILIDAD GENERAL",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37804060",
+    "nombreMateria": "PROGRAMACIÓN AVANZADA",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37804070",
+    "nombreMateria": "DISEÑO LÓGICO",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "9902",
+    "nombreMateria": "SEGUNDA LENGUA II - INGLES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "37806043",
+    "nombreMateria": "ANÁLISIS DE FURIER",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37806081",
+    "nombreMateria": "ANÁLISIS SOCIAL COLOMBIANO",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37805060",
+    "nombreMateria": "ANÁLISIS Y DISEÑO DE SISTEMAS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37806013",
+    "nombreMateria": "SISTEMAS OPERACIONALES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37807011",
+    "nombreMateria": "APLICACIONES PARA INTERNET",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37807013",
+    "nombreMateria": "TEORIA DE LA INFORMACIÓN",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37807019",
+    "nombreMateria": "FUNDAMENTOS DE ECONOMIA",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "37807043",
+    "nombreMateria": "PROBABILIDAD Y ESTADÍSTICA",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37807070",
+    "nombreMateria": "SISTEMAS DISTRIBUIDOS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37807081",
+    "nombreMateria": "GEOPOLÍTICA INTERNACIONAL",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37808011",
+    "nombreMateria": "PROTOCOLOS DE COMUNICACIONES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+
+  {
+    "codMateria": "37808013",
+    "nombreMateria": "REDES CORPORATIVAS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37808019",
+    "nombreMateria": "INGENIERIA ECONOMICA",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37806060",
+    "nombreMateria": "INTELIGENCIA ARTIFICIAL",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37803070",
+    "nombreMateria": "ARQUITECTURA DE COMPUTADORES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37808043",
+    "nombreMateria": "INVESTIGACIÓN DE OPERACIONES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37806070",
+    "nombreMateria": "FUNDAMENTOS DE TELEMÁTICA",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37808070",
+    "nombreMateria": "SISTEMAS ABIERTOS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "9903",
+    "nombreMateria": "SEGUNDA LENGUA III - INGLÉS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37809011",
+    "nombreMateria": "REDES INALÁMBRICAS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "",
+    "nombreMateria": "",
+    "nota": "",
+    "creditos": "",
+    "clasificacion": "",
+    "year": ""
+  },
+  {
+    "codMateria": "37809013",
+    "nombreMateria": "PLANIFICACIÓN Y DISEÑO DE REDES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37809019",
+    "nombreMateria": "FORMULACIÓN Y EVAL. DE PROYECTOS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37809070",
+    "nombreMateria": "REDES DE ALTA VELOCIDAD",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37809081",
+    "nombreMateria": "SEMINARIO DE INVESTIGACIÓN",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37810011",
+    "nombreMateria": "MINERIA DE DATOS",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37810013",
+    "nombreMateria": "GERENCIA Y AUDITORIA DE REDES",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37810019",
+    "nombreMateria": "GESTIÓN TECNOLÓGICA",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  },
+  {
+    "codMateria": "37810081",
+    "nombreMateria": "PROYECTO DE GRADO",
+    "nota": null,
+    "creditos": null,
+    "clasificacion": null,
+    "year": null
+  }
+]
