@@ -71,6 +71,29 @@ app.post('/api/upload', upload.single('archivo'), async (req, res) => {
     }
 });
 
+app.get('/api/datos-estudiante', async (req, res) => {
+    try {
+
+        // Obtener el resultado de la comparación
+        const resultadoMaterias = compararResultado();
+        console.log('Resultado de la comparación:', resultadoMaterias);
+
+        res.json({
+            Completadas: resultadoMaterias.materiasAprobadas,
+            Pendientes: resultadoMaterias.materiasPendientes,
+            creditosAprobados: resultadoMaterias.creditosAprobados,
+            mensaje: 'Datos procesados correctamente.',
+        });
+        console.log('Datos del estudiante:', resultadoMaterias);
+    } catch (error) {
+        console.error('Error al procesar la solicitud:', error);
+        res.status(500).json({
+            error: 'Error interno del servidor'
+        });
+    }
+});
+
+
 // Iniciar el servidor
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${PORT}`);
