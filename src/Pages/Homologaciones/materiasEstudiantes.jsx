@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../../Components/Navbar";
 
-export default function materiasEstudiante() {
-  console.log("trayendo datos crudos de mi server");
+export default function MateriasEstudiante() {
+  console.log("Trayendo datos crudos de mi servidor");
   const [datos, setDatos] = useState(null);
 
   useEffect(() => {
@@ -24,70 +24,62 @@ export default function materiasEstudiante() {
   console.log("Datos:", datos);
 
   return (
-    <div className="w-full py-6 space-y-6">
+    <div className="bg-[#fcf2e8]  w-full py-6 space-y-6">
       <Navbar />
-      <div className="container flex flex-col space-y-4 px-4 md:flex-row md:space-y-0 md:items-center md:justify-between lg:px-6 xl:max-w-6xl xl:mx-auto">
+      <div className=" container px-4 lg:px-6 xl:max-w-6xl xl:mx-auto">
         {datos && (
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-              Tecnología en sistematización de datos
-            </h1>
-            <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
-              Tecnología / Tecnologia plan de estudio 286
-            </p>
-          </div>
-        )}
-        {datos && (
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <BookIcon className="w-5 h-5" />
-              <span className="text-sm font-medium tracking-wide">
-                Materias
-              </span>
+          <>
+            <div className="space-y-4">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                Tecnología en sistematización de datos
+              </h1>
+              <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                Tecnología / Tecnologia plan de estudio 286
+              </p>
             </div>
+            <br />
+            <div className="flex items-center space-x-8">
+              <BookIcon className="flex w-5 h-5" />
+              <span className="text-lg font-medium">Materias Aprobadas</span>
+            </div>
+            <br />
+          </>
+        )}
+        {datos && datos.materias && datos.materias.length > 0 && (
+          <div className="grid gap-y-10 gap-x-32 grid-cols-3 grid-rows-3">
+            {datos.materias.map((materia, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-md rounded-md p-6 h-56 w-96"
+              >
+                <h2 className="text-xl font-bold">{materia.nombreMateria}</h2>
+                <br />
+                <p className="text-gray-500">Codigo: {materia.codMateria}</p>
+                <p className="text-gray-500">Nota: {materia.nota}</p>
+                <p className="text-gray-500">
+                  Clasificación: {materia.clasificacion}
+                </p>
+                <p className="text-gray-500">Año: {materia.year}</p>
+              </div>
+            ))}
           </div>
         )}
-      </div>
-      {datos && datos.Completadas && datos.Completadas.length > 0 && (
-        <div className="container flex flex-col space-y-4 px-4 md:flex-row md:space-y-0 md:items-center md:justify-between lg:px-6 xl:max-w-6xl xl:mx-auto">
-          <div className="space-y-2">
-            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
-              Materias completadas
-            </h2>
-            <ul className="list-disc pl-6">
-              {datos.Completadas.map((materia, index) => (
-                <li key={index}>{materia}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
-      {datos && datos.Pendientes && datos.Pendientes.length > 0 && (
-        <div className="container flex flex-col space-y-4 px-4 md:flex-row md:space-y-0 md:items-center md:justify-between lg:px-6 xl:max-w-6xl xl:mx-auto">
-          <div className="space-y-2">
-            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
-              Materias pendientes
-            </h2>
-            <ul className="list-disc pl-6">
-              {datos.Pendientes.map((materia, index) => (
-                <li key={index}>{materia}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
-      {datos && (
-        <div className="container flex flex-col space-y-4 px-4 md:flex-row md:space-y-0 md:items-center md:justify-between lg:px-6 xl:max-w-6xl xl:mx-auto">
+        <br />
+        <br />
+        {datos && (
           <div className="space-y-2">
             <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
               Créditos aprobados
             </h2>
             <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
-              {datos.creditosAprobados}
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                {datos.creditosAprobados}
+              </h1>
             </p>
           </div>
-        </div>
-      )}
+        )}
+      </div>
+      <br />
     </div>
   );
 }

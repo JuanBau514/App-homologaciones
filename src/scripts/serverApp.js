@@ -73,18 +73,25 @@ app.post('/api/upload', upload.single('archivo'), async (req, res) => {
 
 app.get('/api/datos-estudiante', async (req, res) => {
     try {
-
-        // Obtener el resultado de la comparación
         const resultadoMaterias = compararResultado();
         console.log('Resultado de la comparación:', resultadoMaterias);
 
+        // Obtener datos de materias compatibles
+        const datosMaterias = resultadoMaterias.materiasAprobadas.concat(resultadoMaterias.materiasPendientes);
+        const datosMateriasCompatibles = datosMaterias.map(materia => ({
+            codMateria: materia.codMateria,
+            nombreMateria: materia.nombreMateria,
+            nota: materia.nota, // Agregar la nota de la materia
+            clasificacion: materia.clasificacion, // Agregar la clasificación de la materia
+            year: materia.year // Suponiendo que el año también se necesita
+        }));
+
         res.json({
-            Completadas: resultadoMaterias.materiasAprobadas,
-            Pendientes: resultadoMaterias.materiasPendientes,
+            materias: datosMateriasCompatibles, // Enviar los datos compatibles con la nueva estructura
             creditosAprobados: resultadoMaterias.creditosAprobados,
             mensaje: 'Datos procesados correctamente.',
         });
-        console.log('Datos del estudiante:', resultadoMaterias);
+
     } catch (error) {
         console.error('Error al procesar la solicitud:', error);
         res.status(500).json({
@@ -92,6 +99,7 @@ app.get('/api/datos-estudiante', async (req, res) => {
         });
     }
 });
+
 
 
 // Iniciar el servidor
