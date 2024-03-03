@@ -47,23 +47,66 @@ export default function MateriasEstudiante() {
         )}
         {datos && datos.materias && datos.materias.length > 0 && (
           <div className="grid gap-y-10 gap-x-32 grid-cols-3 grid-rows-3">
-            {datos.materias.map((materia, index) => (
-              <div
-                key={index}
-                className="bg-white shadow-md rounded-md p-6 h-56 w-96"
-              >
-                <h2 className="text-xl font-bold">{materia.nombreMateria}</h2>
-                <br />
-                <p className="text-gray-500">Codigo: {materia.codMateria}</p>
-                <p className="text-gray-500">Nota: {materia.nota}</p>
-                <p className="text-gray-500">
-                  Clasificación: {materia.clasificacion}
-                </p>
-                <p className="text-gray-500">Año: {materia.year}</p>
-              </div>
-            ))}
+            {datos.materias
+              .filter(
+                (materia) =>
+                  materia.codMateria !== null || materia.nombreMateria === ""
+              )
+              .map((materia, index) => (
+                <div
+                  key={index}
+                  className="bg-white shadow-md rounded-md p-6 h-56 w-96"
+                >
+                  <h2 className="text-xl font-bold">{materia.nombreMateria}</h2>
+                  <br />
+                  <p className="text-gray-500">Codigo: {materia.codMateria}</p>
+                  <p className="text-gray-500">Nota: {materia.nota}</p>
+                  <p className="text-gray-500">
+                    Clasificación: {materia.clasificacion}
+                  </p>
+                  <p className="text-gray-500">Año: {materia.year}</p>
+                </div>
+              ))}
           </div>
         )}
+
+        <div>
+          <br />
+          <h1 className="text-2xl font-bold tracking-tighter sm:text-3xl">
+            Materias Pendientes
+          </h1>
+          <br />
+          {datos && datos.materias && datos.materias.length > 0 && (
+            <div className="grid gap-y-10 gap-x-32 grid-cols-3 grid-rows-3">
+              {datos.materias
+                .filter(
+                  (materia) =>
+                    materia.codMateria === null && materia.nombreMateria !== ""
+                )
+                .map((materia, index) => (
+                  <div
+                    key={index}
+                    className="bg-white shadow-md rounded-md p-6 h-56 w-96"
+                  >
+                    <h2 className="text-xl font-bold">
+                      {materia.nombreMateria}
+                    </h2>
+                    <br />
+                    <p className="text-gray-500">
+                      Codigo: {materia.codMateria}
+                    </p>
+                    <p className="text-gray-500">Nota: {materia.nota}</p>
+                    <p className="text-gray-500">
+                      Clasificación: {materia.clasificacion}
+                    </p>
+                    <p className="text-gray-500">Año: {materia.year}</p>
+                  </div>
+                ))}
+            </div>
+          )}
+          <br />
+        </div>
+
         <br />
         <br />
         {datos && (
