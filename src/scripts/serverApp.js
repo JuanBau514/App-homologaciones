@@ -22,6 +22,8 @@ const upload = multer({
     dest: 'uploads/'
 });
 
+let datosEstudianteGlobal = {};
+
 // Ruta para recibir archivos HTML mediante una solicitud POST
 app.post('/api/upload', upload.single('archivo'), async (req, res) => {
     try {
@@ -31,6 +33,8 @@ app.post('/api/upload', upload.single('archivo'), async (req, res) => {
         }); // Leer el contenido del archivo
         const datosEstudiante = await scraping_info_estudiante(htmlContent);
         console.log('Datos del estudiante:', datosEstudiante);
+
+        datosEstudianteGlobal = datosEstudiante; // Guardar los datos del estudiante para su posterior uso
 
         const datosMaterias = await scraping_materias(htmlContent);
         console.log('Materias:', datosMaterias);
@@ -75,6 +79,8 @@ app.get('/api/datos-estudiante', async (req, res) => {
     try {
         const resultadoMaterias = compararResultado();
         console.log('Resultado de la comparación:', resultadoMaterias);
+        const estudiante = datosEstudianteGlobal;
+        console.log('Datos del estudiante:', estudiante);
 
         // Obtener datos de materias compatibles
         const datosMaterias = resultadoMaterias.materiasAprobadas.concat(resultadoMaterias.materiasPendientes);
@@ -87,6 +93,7 @@ app.get('/api/datos-estudiante', async (req, res) => {
         }));
 
         res.json({
+            estudiante: datosEstudianteGlobal,
             materias: datosMateriasCompatibles, // Enviar los datos compatibles con la nueva estructura
             creditosAprobados: resultadoMaterias.creditosAprobados,
             mensaje: 'Datos procesados correctamente.',

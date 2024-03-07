@@ -5,26 +5,29 @@ import {
 async function scraping_info_estudiante(htmlContent) {
     // eslint-disable-next-line no-useless-catch
     try {
+        // Lee el archivo HTML y carga el contenido en Cheerio
         const $ = load(htmlContent);
-        const tablaEstudiante = $('td');
-        const estudianteInfo = {};
+        // Obtiene los datos del estudiante
+        const nombre = $('td:contains("No")').next().text().trim();
+        const identificacion = $('td:contains("Identifi")').next().text().trim();
+        const codigo = $('td:contains("C=C")').next().text().trim();
+        const correoElectronico = $('td:contains("E-Mail:")').next().text().trim();
+        const proyectoCurricular = $('td:contains("Carrera:")').next().text().trim();
+        const renovaciones = $('td:contains("Renovaci")').next().text().trim();
 
-        tablaEstudiante.find('tr').each((i, row) => {
-            const columns = $(row).find('td');
-            const campo = $(columns.eq(0)).text().trim().replace(':', '', ' \n ');
-            const valor = $(columns.eq(1)).text().trim();
-
-            // Agregar al objeto solo si el campo es relevante
-            const camposRelevantes = ['Nom=\nbre:', ' Nom=\nbre: ', 'C=C3=B3digo', 'Carrera =', 'Plan de E=\nstudios', 'E-Mail <=\n/td>', 'Fecha de =\nnacimiento', 'Promedio =\nAcumulado'];
-            if (camposRelevantes.includes(campo)) {
-                estudianteInfo[campo] = valor;
-            }
-        });
-
-        return estudianteInfo;
-    } catch (err) {
-        throw err;
+        // Devuelve la información del estudiante
+        return {
+            nombre,
+            identificacion,
+            codigo,
+            correoElectronico,
+            proyectoCurricular,
+            renovaciones
+        };
+    } catch (error) {
+        throw error;
     }
+
 }
 
 function limpiarNombreMateria(nombre) {
