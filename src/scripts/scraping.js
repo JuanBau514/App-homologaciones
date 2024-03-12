@@ -17,18 +17,37 @@ async function scraping_info_estudiante(htmlContent) {
 
         // Devuelve la información del estudiante
         return {
-            nombre,
-            identificacion,
-            codigo,
-            correoElectronico,
-            proyectoCurricular,
+            nombre: limpiarTexto(nombre),
+            identificacion: limpiarTexto(identificacion),
+            codigo: limpiarCodigo(codigo),
+            correoElectronico: limpiarTexto(correoElectronico),
+            proyectoCurricular: limpiarTexto(proyectoCurricular),
             renovaciones
         };
     } catch (error) {
         throw error;
     }
-
 }
+
+function limpiarCodigo(codigo) {
+    codigo = codigo.replace(/\n/g, '');
+    codigo = codigo.replace(/=/g, ''); // Elimina el signo igual (=)
+    // Reemplaza los espacios múltiples con un solo espacio
+    codigo = codigo.replace(/\s+/g, ' ');
+    codigo = codigo.slice(0, 11);
+    return codigo;
+}
+
+function limpiarTexto(texto) {
+    // Reemplaza todos los saltos de línea con un espacio en blanco
+    texto = texto.replace(/\n/g, '');
+    texto = texto.replace(/=/g, ''); // Elimina el signo igual (=)
+    // Reemplaza los espacios múltiples con un solo espacio
+    texto = texto.replace(/\s+/g, ' ');
+
+    return texto.trim(); // Elimina espacios en blanco al principio y al final
+}
+
 
 function limpiarNombreMateria(nombre) {
     // Reemplazar caracteres especiales
@@ -125,8 +144,9 @@ async function scraping_materias(htmlContent) {
 
 
 export {
+    limpiarCodigo,
+    limpiarTexto,
     limpiarNombreMateria,
     scraping_info_estudiante,
     scraping_materias,
-
 };

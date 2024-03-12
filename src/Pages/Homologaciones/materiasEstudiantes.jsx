@@ -37,6 +37,39 @@ export default function MateriasEstudiante() {
                 Tecnología / Tecnologia plan de estudio 286
               </p>
             </div>
+
+            {
+              <div className="space-y-2">
+                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
+                  Datos del estudiante
+                </h2>
+                <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                  <span className="font-bold">Nombre:</span>{" "}
+                  {datos.estudiante.nombre}
+                </p>
+                <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                  <span className="font-bold">Identificación:</span>{" "}
+                  {datos.estudiante.identificacion}
+                </p>
+                <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                  <span className="font-bold">Código:</span>{" "}
+                  {datos.estudiante.codigo}
+                </p>
+                <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                  <span className="font-bold">Correo Electrónico:</span>{" "}
+                  {datos.estudiante.correoElectronico}
+                </p>
+                <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                  <span className="font-bold">Proyecto Curricular:</span>{" "}
+                  {datos.estudiante.proyectoCurricular}
+                </p>
+                <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                  <span className="font-bold">Renovaciones:</span>{" "}
+                  {datos.estudiante.renovaciones}
+                </p>
+              </div>
+            }
+
             <br />
             <div className="flex items-center space-x-8">
               <BookIcon className="flex w-5 h-5" />
