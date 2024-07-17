@@ -1,3 +1,5 @@
+# Ignorar todos los archivos y carpetas dentro de 'uploads'
+uploads/*
 # Logs
 logs
 *.log
