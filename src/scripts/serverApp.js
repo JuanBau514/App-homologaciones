@@ -93,8 +93,8 @@ app.get('/api/datos-estudiante', async (req, res) => {
         }));
 
         res.json({
-            estudiante: datosEstudianteGlobal,
-            materias: datosMateriasCompatibles, // Enviar los datos compatibles con la nueva estructura
+            Completadas: resultadoMaterias.materiasAprobadas,
+            Pendientes: resultadoMaterias.materiasPendientes,
             creditosAprobados: resultadoMaterias.creditosAprobados,
             mensaje: 'Datos procesados correctamente.',
         });
