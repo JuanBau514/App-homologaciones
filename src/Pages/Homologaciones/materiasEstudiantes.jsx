@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../../Components/Navbar";
 
 export default function MateriasEstudiante() {
@@ -36,6 +37,15 @@ export default function MateriasEstudiante() {
               <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
                 Tecnología / Tecnologia plan de estudio 286
               </p>
+              <li className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                <Link to="/homologaciones">Volver</Link>
+              </li>
+              <button>
+                <p>
+                  Descargar reporte del estudiante
+                </p>
+              </button>
+
             </div>
             <br />
             <div className="flex items-center space-x-8">
