@@ -92,9 +92,18 @@ app.get('/api/datos-estudiante', async (req, res) => {
             year: materia.year // Suponiendo que el año también se necesita
         }));
 
+        // Obtener datos de materias compatibles
+        const datosMaterias = resultadoMaterias.materiasAprobadas.concat(resultadoMaterias.materiasPendientes);
+        const datosMateriasCompatibles = datosMaterias.map(materia => ({
+            codMateria: materia.codMateria,
+            nombreMateria: materia.nombreMateria,
+            nota: materia.nota, // Agregar la nota de la materia
+            clasificacion: materia.clasificacion, // Agregar la clasificación de la materia
+            year: materia.year // Suponiendo que el año también se necesita
+        }));
+
         res.json({
-            Completadas: resultadoMaterias.materiasAprobadas,
-            Pendientes: resultadoMaterias.materiasPendientes,
+            materias: datosMateriasCompatibles, // Enviar los datos compatibles con la nueva estructura
             creditosAprobados: resultadoMaterias.creditosAprobados,
             mensaje: 'Datos procesados correctamente.',
         });

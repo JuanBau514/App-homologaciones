@@ -2,40 +2,35 @@ import {
     readFileSync
 } from 'fs';
 
+var materiasPendientes = [];
+
+
 // Función para comparar las materias del estudiante con las materias necesarias para graduarse
 function compararMaterias(estudianteMaterias, planEstudio) {
-    const materiasAprobadas = estudianteMaterias.filter(materia => materia.nota >= 30);
+    const materiasAprobadas = [];
+
+    estudianteMaterias.forEach(estudianteMateria => {
+        const planMateria = planEstudio.find(m => m.codMateria === estudianteMateria.codMateria);
+        if (planMateria && estudianteMateria.nota >= 30) {
+            const materia = {
+                codMateria: estudianteMateria.codMateria,
+                nombreMateria: estudianteMateria.nombreMateria,
+                nota: estudianteMateria.nota,
+                creditos: estudianteMateria.creditos,
+                clasificacion: estudianteMateria.clasificacion,
+                year: estudianteMateria.year
+            };
+            materiasAprobadas.push(materia); // Aquí se agrega a materiasAprobadas
+        } else {
+            materiasPendientes.push(estudianteMateria); // Aquí se agrega a materiasPendientes
+        }
+    });
 
     const creditosAprobados = materiasAprobadas.reduce((acc, materia) => acc + parseInt(materia.creditos, 10), 0);
 
-    const materiasDetalladas = materiasAprobadas.map(materia => {
-        return {
-            codMateria: materia.codMateria,
-            nombreMateria: materia.nombreMateria,
-            nota: materia.nota,
-            creditos: materia.creditos,
-            clasificacion: materia.clasificacion,
-            year: materia.year
-        };
-    });
-
-    const materiasPendientes = planEstudio.filter(materia => !materiasAprobadas.some(aprobada => aprobada.nombreMateria === materia.nombreMateria));
-
-    // Construir las materias pendientes con el nombre de la materia y el resto de los datos como null
-    const materiasPendientesDetalladas = materiasPendientes.map(materia => {
-        return {
-            codMateria: null,
-            nombreMateria: materia.nombreMateria,
-            nota: null,
-            creditos: null,
-            clasificacion: null,
-            year: null
-        };
-    }).filter(materia => materia.nombreMateria.trim() !== ''); // Filtrar para eliminar los objetos completamente vacíos
-
     return {
-        materiasAprobadas: materiasDetalladas,
-        materiasPendientes: materiasPendientesDetalladas,
+        materiasAprobadas,
+        materiasPendientes,
         creditosAprobados,
     };
 }

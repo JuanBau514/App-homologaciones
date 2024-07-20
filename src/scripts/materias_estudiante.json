@@ -1,243 +1,11 @@
 [
   {
-    "codMateria": "1",
-    "nombreMateria": "CÁLCULO DIFERENCIAL",
-    "nota": 34,
-    "creditos": 4,
-    "clasificacion": "OB",
-    "year": "2016"
-  },
-  {
-    "codMateria": "1",
-    "nombreMateria": "CÁLCULO DIFERENCIAL",
-    "nota": 27,
-    "creditos": 4,
-    "clasificacion": "OB",
-    "year": "2015"
-  },
-  {
-    "codMateria": "4",
-    "nombreMateria": "CÁTEDRA FRANCISCO JOSÉ DE CALDAS",
-    "nota": 34,
-    "creditos": 1,
-    "clasificacion": "OC",
-    "year": "2015"
-  },
-  {
-    "codMateria": "9",
-    "nombreMateria": "ÁLGEBRA LINEAL",
-    "nota": 33,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2016"
-  },
-  {
-    "codMateria": "9",
-    "nombreMateria": "ÁLGEBRA LINEAL",
-    "nota": 20,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2015"
-  },
-  {
-    "codMateria": "12",
-    "nombreMateria": "CÁTEDRA DEMOCRACIA Y CIUDADANÍA",
-    "nota": 39,
-    "creditos": 1,
-    "clasificacion": "OC",
-    "year": "2015"
-  },
-  {
-    "codMateria": "1054",
-    "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS I",
-    "nota": 32,
-    "creditos": 3,
-    "clasificacion": "OC",
-    "year": "2015"
-  },
-  {
-    "codMateria": "1507",
-    "nombreMateria": "INTRODUCCIÓN A ALGORITMOS",
-    "nota": 36,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2015"
-  },
-  {
-    "codMateria": "1508",
-    "nombreMateria": "LÓGICA MATEMÁTICA",
-    "nota": 32,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2015"
-  },
-  {
-    "codMateria": "3",
-    "nombreMateria": "FÍSICA I: MECÁNICA NEWTONIANA",
-    "nota": 32,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2016"
-  },
-  {
-    "codMateria": "7",
-    "nombreMateria": "CÁLCULO INTEGRAL",
-    "nota": 34,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1056",
-    "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS II",
-    "nota": 32,
-    "creditos": 2,
-    "clasificacion": "OC",
-    "year": "2016"
-  },
-  {
-    "codMateria": "1072",
-    "nombreMateria": "ADMINISTRACIÓN",
-    "nota": 37,
-    "creditos": 3,
-    "clasificacion": "OC",
-    "year": "2016"
-  },
-  {
-    "codMateria": "1082",
-    "nombreMateria": "CÁTEDRA DE CONTEXTO",
-    "nota": 42,
-    "creditos": 1,
-    "clasificacion": "OC",
-    "year": "2016"
-  },
-  {
-    "codMateria": "1513",
-    "nombreMateria": "ESTRUCTURA DE DATOS",
-    "nota": 30,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2016"
-  },
-  {
-    "codMateria": "1514",
-    "nombreMateria": "PROGRAMACIÓN ORIENTADA A OBJETOS",
-    "nota": 30,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2016"
-  },
-  {
-    "codMateria": "13",
-    "nombreMateria": "FÍSICA II: ELECTROMAGNETISMO",
-    "nota": 36,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2017"
-  },
-  {
-    "codMateria": "13",
-    "nombreMateria": "FÍSICA II: ELECTROMAGNETISMO",
-    "nota": 28,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1060",
-    "nombreMateria": "CIENCIA TECNOLOGÍA Y SOCIEDAD",
-    "nota": 32,
-    "creditos": 2,
-    "clasificacion": "OC",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1509",
-    "nombreMateria": "FUNDAMENTOS DE ORGANIZACIÓN",
-    "nota": 39,
-    "creditos": 2,
-    "clasificacion": "EI",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1518",
-    "nombreMateria": "PROGRAMACIÓN MULTINIVEL",
-    "nota": 37,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1519",
-    "nombreMateria": "BASES DE DATOS",
-    "nota": 31,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2017"
-  },
-  {
-    "codMateria": "9901",
-    "nombreMateria": "SEGUNDA LENGUA I - INGLÉS",
-    "nota": 34,
-    "creditos": 2,
-    "clasificacion": "OC",
-    "year": "2016"
-  },
-  {
-    "codMateria": "1075",
-    "nombreMateria": "ÉTICA Y SOCIEDAD",
-    "nota": 33,
-    "creditos": 2,
-    "clasificacion": "OC",
-    "year": "2016"
-  },
-  {
-    "codMateria": "1511",
-    "nombreMateria": "TIC'S EN LAS ORGANIZACIONES",
-    "nota": 31,
-    "creditos": 2,
-    "clasificacion": "EI",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1515",
-    "nombreMateria": "ANÁLISIS Y MÉTODOS NUMÉRICOS",
-    "nota": 39,
-    "creditos": 3,
-    "clasificacion": "EI",
-    "year": "2018"
-  },
-  {
-    "codMateria": "1524",
-    "nombreMateria": "PROGRAMACIÓN AVANZADA",
-    "nota": 49,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1526",
-    "nombreMateria": "DISEÑO LÓGICO",
-    "nota": 40,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2018"
-  },
-  {
-    "codMateria": "1526",
-    "nombreMateria": "DISEÑO LÓGICO",
-    "nota": 28,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2018"
-  },
-  {
-    "codMateria": "9902",
-    "nombreMateria": "SEGUNDA LENGUA II - INGLES",
-    "nota": 32,
-    "creditos": 2,
-    "clasificacion": "OC",
-    "year": "2017"
+    "codMateria": "=\n                                      =\n                                      =\n \n\n                                                             =20\n                           =20\n                        \n                \n                Cod.\n                Nomb=\nre EspacioAcad=C3=A9mico \n                Grupo=\n \n                Cr=C3=\n=A9ditos\n                Clasi=\nficaci=C3=B3n\n                Lun <=\n/th>\n                Mar <=\n/th>\n                Mie <=\n/th>\n                Jue <=\n/th>\n                Vie <=\n/th>\n                S=C3=\n=A1b \n                Dom <=\n/th>\n                \n              \n            1516\n            AN=C3=81LISIS SOCIAL COLOMBIANO\n            578-302\n            2\n            EE\n    14-16Sede: FTTE=\nEdificio: BLOQUE 9Sal=C3=B3n:AULA 10114-16Sede: FTTEEdificio: BLOQUE 1, 2, 3 Y 4Sal=C3=B3n:B-3 AULA 202<=\nbr>                              \n\n                                        \n            1524\n            PROGRAMACI=C3=93N AVANZADA\n            578-302\n            3\n            OB\n    8-10Sede: FTTEEdificio: BLOQUE 13 - CAFETERIA<=\nbr>Sal=C3=B3n:SALA DE INFORM=C3=81TICA 66-8Se=\nde: FTTEEdificio: TECHNESal=C3=B3n:SALA DE INFORMATICA 1                              \n\n                                        \n            1525\n            BASES DE DATOS AVANZADAS\n            578-304\n            3\n            CP\n    14-16Sede: FTTEEdificio: TECHNESal=C3=B3n:=\nLABORATORIO DE SISTEMAS DISTRIBUIDOS 16-18Sede: FTTEEdificio: BLOQUE 13 - CAFETER=\nIASal=C3=B3n:SALA DE INFORM=C3=81TICA 7\n\n                                        \n            1533\n            SISTEMAS OPERACIONALES\n            578-302\n            3\n            OB\n    12-14Sede: FTTE=\nEdificio: TECHNESal=C3=B3n: LABORATORIO DE BASES DE DATOS AVANZADAS=\n14-16Sede: FTTEEdificio: TECHNES=\nal=C3=B3n:LABORATORIO REDES Y TELEMATICA\n\n                                        \n            1535\n            TRANSMISI=C3=93N DE DATOS\n            578-301\n            3\n            EI\n    10-12Sede:=\n FTTEEdificio: BLOQUE 1, 2, 3 Y 4Sal=C3=B3n:AULA 50212-14Sede: FTTEEdific=\nio: BLOQUE 11-12Sal=C3=B3n:AULA 201                              \n\n                                        \n            1537\n            TALLER DE INVESTIGACI=C3=93N\n            578-303\n            2\n            OB\n    12-14Sede: FTTEEdificio: BLOQUE 13 - CAFETERIA=\nSal=C3=B3n:SALA DE INFORM=C3=81TICA 510-12Sede: FTTEEdificio: TECHNESal=C3=B3n:SALA DE INFORMATICA 3\n\n                                        \n            9902\n            SEGUNDA LENGUA II - INGLES\n            105-204\n            2\n            OC\n    6-8Sede: FTTEEdificio: BLOQUE 11-12Sal=C3=\n=B3n:AULA M=C3=9ALTIPLE 26-8Sede: FTTEEdificio: BLOQUE 11-12Sal=C3=B3n:AULA 2=\n01",
+    "nombreMateria": "1516",
+    "nota": 0,
+    "creditos": 0,
+    "clasificacion": "2",
+    "year": "EE"
   },
   {
     "codMateria": "1516",
@@ -253,127 +21,149 @@
     "nota": 40,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2018"
+    "year": "2018",
+    "nota": 0,
+    "creditos": 0,
+    "clasificacion": "EE",
+    "year": "14-16Sede: FTTE=\nEdificio: BLOQUE 9Sal=C3=B3n:AULA 101"
   },
   {
     "codMateria": "1533",
     "nombreMateria": "SISTEMAS OPERACIONALES",
-    "nota": 34,
-    "creditos": 3,
+    "nota": 0,
+    "creditos": 0,
     "clasificacion": "OB",
     "year": "12-14Sede: FTTE=\nEdificio: TECHNESal=C3=B3n: LABORATORIO DE BASES DE DATOS AVANZADAS="
   },
   {
-    "codMateria": "1535",
-    "nombreMateria": "TRANSMISIÓN DE DATOS",
-    "nota": 38,
-    "creditos": 3,
-    "year": "2018"
-  },
-  {
-    "codMateria": "1537",
-    "nombreMateria": "TALLER DE INVESTIGACIÓN",
-    "nota": 40,
-    "creditos": 2,
-    "clasificacion": "OB",
-    "year": "2018"
-  },
-  {
-    "codMateria": "7202",
-    "nombreMateria": "APLICACIONES PARA INTERNET",
-    "nota": 33,
-    "creditos": 3,
-    "clasificacion": "EI",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1446",
-    "nombreMateria": "TRABAJO DE GRADO TECNOLÓGICO",
-    "nota": 43,
-    "creditos": 2,
-    "clasificacion": "OB",
-    "year": "2019"
-  },
-  {
-    "codMateria": "1532",
-    "nombreMateria": "INTELIGENCIA ARTIFICIAL",
-    "nota": 45,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2018"
-  },
-  {
-    "codMateria": "1539",
-    "nombreMateria": "ARQUITECTURA DE COMPUTADORES",
-    "nota": 43,
-    "creditos": 2,
-    "clasificacion": "OB",
-    "year": "2018"
-  },
-  {
-    "codMateria": "1540",
-    "nombreMateria": "GLOBALIZACIÓN",
-    "nota": 38,
-    "creditos": 2,
-    "clasificacion": "EE",
-    "year": "2018"
-  },
-  {
-    "codMateria": "1541",
-    "nombreMateria": "FUNDAMENTOS DE TELEMÁTICA",
-    "nota": 40,
-    "creditos": 3,
-    "clasificacion": "EI",
-    "year": "2018"
-  },
-  {
-    "codMateria": "1542",
-    "nombreMateria": "PROGRAMACIÓN POR COMPONENTES",
-    "nota": 43,
-    "creditos": 3,
-    "clasificacion": "EI",
-    "year": "2018"
-  },
-  {
-    "codMateria": "9903",
-    "nombreMateria": "SEGUNDA LENGUA III - INGLÉS",
-    "nota": 36,
-    "creditos": 2,
-    "clasificacion": "OC",
-    "year": "2017"
-  },
-  {
-    "codMateria": "88",
-    "nombreMateria": "ECUACIONES DIFERENCIALES",
-    "nota": 32,
-    "creditos": 3,
-    "clasificacion": "CP",
-    "year": "2018"
-  },
-  {
-    "codMateria": "88",
-    "nombreMateria": "ECUACIONES DIFERENCIALES",
-    "nota": 28,
-    "creditos": 3,
-    "clasificacion": "CP",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1525",
-    "nombreMateria": "BASES DE DATOS AVANZADAS",
-    "nota": 36,
-    "creditos": 3,
-    "clasificacion": "CP",
-    "year": "2018"
-  },
-  {
-    "codMateria": "1538",
-    "nombreMateria": "INGENIERÍA DE SOFTWARE",
-    "nota": 41,
     "codMateria": "=20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n\n           =20\n            \n          \n            \n              Cod.\n              Nombre Espacio Acad=\n=C3=A9mico\n              Docente\n              Grupo\n              Nro Fallas\n              Nota 1\n              Nota 2\n              Nota 3\n              Nota 4\n              Nota 5\n              Nota 6\n              Nota Lab\n              Nota Examen\n              Habil\n              Acumulado\n\n            \n          \n              \n            1516\n            AN=C3=81LISIS SOCIAL COLOMBI=\nANO\n            GARCIA QUEVEDO FRANCYA INES<=\nbr>\n            578-302\n            1\n                \n                  \n                    \n    10%                    \n                \n                \n                  \n                    4.3\n                  \n                \n              \n            \n                \n                  \n                    \n    10%                    \n                \n                \n                  \n                    3.5\n                  \n                \n              \n            \n                \n                  \n                    \n    15%                    \n                \n                \n                  \n                    3.5\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    30%                    \n                \n                \n                  \n                    0.0\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n\n                        \n             =20\n                13.05                \n                \n              \n            \n\n          \n              \n            1524\n            PROGRAMACI=C3=93N AVANZADA\n            WANUMEN SILVA LUIS FELIPE\n            578-302\n            0\n                \n                  \n                    \n    35%                    \n                \n                \n                  \n                    4.5\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    35%                    \n                \n                \n                  \n                    5.0\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    30%                    \n                \n                \n                  \n                    0.0\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n\n                        \n             =20\n                33.25                \n                \n              \n            \n\n          \n              \n            1525\n            BASES DE DATOS AVANZADAS\n            HERNANDEZ GARCIA CLAUDIA LIL=\nIANA\n            578-304\n            0\n                \n                  \n                    \n    20%                    \n                \n                \n                  \n                    3.0\n                  \n                \n              \n            \n                \n                  \n                    \n    15%                    \n                \n                \n                  \n                    2.4\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    30%                    \n                \n                \n                  \n                    0.0\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n\n                        \n             =20\n                9.6                =\n\n                \n              \n            \n\n          \n              \n            1533\n            SISTEMAS OPERACIONALES\n            DAZA TORRES JAVIER ORLANDO\n            578-302\n            0\n                \n                  \n                    \n    35%                    \n                \n                \n                  \n                    4.0\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    30%                    \n                \n                \n                  \n                    0.0\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n\n                        \n             =20\n                14                <=\ntbody>\n                \n              \n            \n\n          \n              \n            1535\n            TRANSMISI=C3=93N DE DATOS\n            FUQUENE ARDILA HECTOR JULIO<=\nbr>\n            578-301\n            0\n                \n                  \n                    \n    25%                    \n                \n                \n                  \n                    1.5\n                  \n                \n              \n            \n                \n                  \n                    \n    10%                    \n                \n                \n                  \n                    3.5\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    25%                    \n                \n                \n                  \n                    0.0\n                  \n                \n              \n            \n                \n                  \n                    \n    10%                    \n                \n                \n                  \n                    0.0\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    30%                    \n                \n                \n                  \n                    0.0\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n\n                        \n             =20\n                7.25                \n                \n              \n            \n\n          \n              \n            1537\n            TALLER DE INVESTIGACI=C3=93N=\n\n            ROMERO GARCIA MARILUZ \n            578-303\n            0\n                \n                  \n                    \n    25%                    \n                \n                \n                  \n                    5.0\n                  \n                \n              \n            \n                \n                  \n                    \n    10%                    \n                \n                \n                  \n                    0.0\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    25%                    \n                \n                \n                  \n                    0.0\n                  \n                \n              \n            \n                \n                  \n                    \n    10%                    \n                \n                \n                  \n                    0.0\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    30%                    \n                \n                \n                  \n                    0.0\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n\n                        \n             =20\n                12.5                \n                \n              \n            \n\n          \n              \n            9902\n            SEGUNDA LENGUA II - INGLES\n            DIAZ MARTINEZ SONIA CAROLINA=\n\n            105-204\n            6\n                \n                  \n                    \n    20%                    \n                \n                \n                  \n                    3.7\n                  \n                \n              \n            \n                \n                  \n                    \n    15%                    \n                \n                \n                  \n                    3.0\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n                \n                  \n                    \n    30%                    \n                \n                \n                  \n                    0.0\n                  \n                \n              \n            \n                \n                  \n                    \n    -                    \n                \n                \n                  \n                    -\n                  \n                \n              \n            \n\n                        \n             =20\n                11.9",
     "nombreMateria": "1516",
     "nota": null,
     "creditos": null,
+    "clasificacion": "578-302",
+    "year": "1"
+  },
+  {
+    "codMateria": "1516",
+    "nombreMateria": "ANÁLISIS SOCIAL COLOMBI=\nANO",
+    "nota": 0,
+    "creditos": 0,
+    "clasificacion": "1",
+    "year": "10%                    \n                \n                \n                  \n                    4.3"
+  },
+  {
+    "codMateria": "1524",
+    "nombreMateria": "PROGRAMACIÓN AVANZADA",
+    "nota": 0,
+    "creditos": 0,
+    "clasificacion": "0",
+    "year": "35%                    \n                \n                \n                  \n                    4.5"
+  },
+  {
+    "codMateria": "1525",
+    "nombreMateria": "BASES DE DATOS AVANZADAS",
+    "nota": 0,
+    "creditos": 0,
+    "clasificacion": "0",
+    "year": "20%                    \n                \n                \n                  \n                    3.0"
+  },
+  {
+    "codMateria": "1533",
+    "nombreMateria": "SISTEMAS OPERACIONALES",
+    "nota": 0,
+    "creditos": 0,
+    "clasificacion": "0",
+    "year": "35%                    \n                \n                \n                  \n                    4.0"
+  },
+  {
+    "codMateria": "1535",
+    "nombreMateria": "TRANSMISIÓN DE DATOS",
+    "nota": 0,
+    "creditos": 0,
+    "clasificacion": "0",
+    "year": "25%                    \n                \n                \n                  \n                    1.5"
+  },
+  {
+    "codMateria": "1537",
+    "nombreMateria": "TALLER DE INVESTIGACIÓN=",
+    "nota": 0,
+    "creditos": 0,
+    "clasificacion": "0",
+    "year": "25%                    \n                \n                \n                  \n                    5.0"
+  },
+  {
+    "codMateria": "9902",
+    "nombreMateria": "SEGUNDA LENGUA II - INGLES",
+    "nota": 0,
+    "creditos": 0,
+    "clasificacion": "6",
+    "year": "20%                    \n                \n                \n                  \n                    3.7"
+  },
+  {
+    "codMateria": "1",
+    "nombreMateria": "CÁLCULO DIFERENCIAL",
+    "nota": 41,
+    "creditos": 4,
+    "clasificacion": "OB",
+    "year": "2021"
+  },
+  {
+    "codMateria": "4",
+    "nombreMateria": "CÁTEDRA FRANCISCO JOSÉ DE CALDAS",
+    "nota": 33,
+    "creditos": 1,
+    "clasificacion": "OC",
+    "year": "2021"
+  },
+  {
+    "codMateria": "9",
+    "nombreMateria": "ÁLGEBRA LINEAL",
+    "nota": 40,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2021"
+  },
+  {
+    "codMateria": "12",
+    "nombreMateria": "CÁTEDRA DEMOCRACIA Y CIUDADANÍA",
+    "nota": 36,
+    "creditos": 1,
+    "clasificacion": "OC",
+    "year": "2021"
+  },
+  {
+    "codMateria": "1054",
+    "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS I",
+    "nota": 43,
+    "creditos": 3,
+    "clasificacion": "OC",
+    "year": "2021"
+  },
+  {
+    "codMateria": "1507",
+    "nombreMateria": "INTRODUCCIÓN A ALGORITMOS",
+    "nota": 39,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2021"
+  },
+  {
+    "codMateria": "1508",
+    "nombreMateria": "LÓGICA MATEMÁTICA",
+    "nota": 43,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2021"
+  },
+  {
+    "codMateria": "3",
+    "nombreMateria": "FÍSICA I: MECÁNICA NEWTONIANA",
+    "nota": 42,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2022"
+  },
+  {
     "codMateria": "7",
     "nombreMateria": "CÁLCULO INTEGRAL",
     "nota": 31,
