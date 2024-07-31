@@ -5,8 +5,10 @@ import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 
 export default function MateriasEstudiante() {
+
   console.log("Trayendo datos crudos de mi servidor");
   const [datos, setDatos] = useState(null);
+
 
   useEffect(() => {
     async function fetchDatos() {
@@ -23,6 +25,8 @@ export default function MateriasEstudiante() {
 
     fetchDatos();
   }, []);
+
+  console.log("Datos del estudiante:", datos);
 
     const generarPDF = () => {
       console.log('Iniciando generación de PDF...');
@@ -109,21 +113,50 @@ export default function MateriasEstudiante() {
       <div className=" container px-4 lg:px-6 xl:max-w-6xl xl:mx-auto">
         {datos && (
           <>
-            <div className="space-y-4">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+            <div className="space-y-15">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-6xl">
                 Tecnología en sistematización de datos
               </h1>
-              <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
-                Tecnología / Tecnologia plan de estudio 286
-              </p>
-              <li className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
-                <Link to="/homologaciones">Volver</Link>
-              </li>
-            <button onClick={generarPDF} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <br />
+            </div>
+            <div className="space-x-10 flex justify-end">
+            <p className="text-gray-500 md:text-base/relaxed dark:text-gray-200">
+                Tecnología / plan de estudio 286
+            </p>
+           <button onClick={generarPDF} className=" justify-end bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded">
               Descargar reporte del estudiante
             </button>
             </div>
             <br />
+            <div>
+              <h1 className="text-2xl font-bold tracking-tighter sm:text-3xl">
+                Datos del Estudiante
+              </h1>
+              <br />
+              <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                <span className="font-bold">Nombre:</span> {datos.estudiante.nombre}
+              </p>
+                 <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                <span className="font-bold">Identificacion:</span> {datos.estudiante.identificacion}
+              </p>
+              <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                <span className="font-bold">Código:</span> {datos.estudiante.codigo}
+              </p>
+              <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                <span className="font-bold">Correo Electronico:</span> {datos.estudiante.correoElectronico}
+              </p>
+              <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                <span className="font-bold">Renovaciones:</span> {datos.estudiante.renovaciones}
+              </p>
+                 <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                <span className="font-bold">Proyecto Curricular:</span> {datos.estudiante.proyectoCurricular}
+              </p>
+              <p className="text-gray-500 md:text-base/relaxed dark:text-gray-400">
+                <span className="font-bold">Créditos aprobados:</span>{" "}
+                {datos.creditosAprobados}
+              </p>
+              <br />
+            </div>
             <div className="flex items-center space-x-8">
               <BookIcon className="flex w-5 h-5" />
               <span className="text-lg font-medium">Materias Aprobadas</span>

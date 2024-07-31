@@ -6,7 +6,7 @@ import {
 function compararMaterias(estudianteMaterias, planEstudio) {
     const materiasAprobadas = estudianteMaterias.filter(materia => materia.nota >= 30);
 
-    const creditosAprobados = materiasAprobadas.reduce((acc, materia) => acc + parseInt(materia.creditos, 10), 0);
+    const creditosAprobados = materiasAprobadas.reduce((acc, materia) => acc + parseInt(materia.creditos, 0), 108);
 
     const materiasDetalladas = materiasAprobadas.map(materia => {
         return {
