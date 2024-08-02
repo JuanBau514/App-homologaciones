@@ -65,83 +65,75 @@ function limpiarNombreMateria(nombre) {
 
     return nombre.trim(); // Eliminar espacios en blanco al principio y al final
 }
+
 async function scraping_materias(htmlContent) {
-
     const $ = load(htmlContent);
-    const tablaInteres = $('td');
     const materias = [];
+    let inicioEncontrado = false;
 
-    let omitir = false;
+    // Buscar todas las tablas en la página
+    $('table').each((_, table) => {
+        // Buscar filas que contengan información de materias
+        $(table).find('tr').each((_, row) => {
+            const columns = $(row).find('td, th');
+            if (columns.length >= 6) {
+                const codMateria = $(columns.eq(0)).text().trim();
+                const nombreMateriaSucio = $(columns.eq(1)).text().trim();
+                const nombreMateria = limpiarNombreMateria(nombreMateriaSucio);
+                let nota = $(columns.eq(2)).text().trim();
+                let creditos = $(columns.eq(3)).text().trim();
+                const clasificacion = $(columns.eq(4)).text().trim();
+                const year = $(columns.eq(5)).text().trim();
 
-    tablaInteres.find('tr').each((i, row) => {
-        const columns = $(row).find('td');
-        const codMateria = $(columns.eq(0)).text().trim();
+                // Iniciar la captura cuando encontremos "CÁLCULO DIFERENCIAL"
+                if (nombreMateria === 'CÁLCULO DIFERENCIAL') {
+                    inicioEncontrado = true;
+                }
 
-        // Si encontramos "Total", establecemos omitir en true para excluir las siguientes entradas
-        if (codMateria === 'Total') {
-            omitir = true;
-            return;
-        }
+                // Validación y limpieza de datos
+                creditos = parseFloat(creditos);
+                nota = parseFloat(nota);
 
-        // Si estamos en la sección para omitir, no agregamos la entrada actual
-        if (omitir) {
-            return;
-        }
+                if (isNaN(creditos) || creditos > 5) creditos = null;
+                if (isNaN(nota) || nota > 50) nota = null;
 
-        const nombreMateriaSucio = $(columns.eq(1)).text().trim();
-        const nombreMateria = limpiarNombreMateria(nombreMateriaSucio);
-        let nota = $(columns.eq(2)).text().trim();
-        let creditos = $(columns.eq(3)).text().trim(); // Consideramos los créditos como texto
+                // Agregar la materia si estamos en el rango correcto y cumple con los criterios
+                if (inicioEncontrado && 
+                    codMateria && 
+                    nombreMateria && 
+                    !codMateria.includes('Asig') &&
+                    !nombreMateria.includes('Nomb') &&
+                    !clasificacion.includes('Clasi') &&
+                    !year.includes('A=C3') &&
+                    codMateria !== 'Total' &&
+                    !['OB', 'OC', 'EI', 'EE'].includes(codMateria)) {
+                    materias.push({
+                        codMateria,
+                        nombreMateria,
+                        nota,
+                        creditos,
+                        clasificacion,
+                        year
+                    });
+                }
 
-        // Agregar condicional para establecer créditos y nota en 0 si son mayores a 5
-        creditos = parseInt(creditos, 10); // Convertimos a número para la comparación
-        nota = parseInt(nota, 10); // Convertimos a número para la comparación
-
-        creditos = creditos > 5 ? 0 : creditos; // Establecemos en 0 si son mayores a 5
-        nota = creditos === 0 ? 0 : nota; // Establecemos en 0 si los créditos son 0
-
-        // Agregar condicional para establecer nota y créditos en 0 o null si la nota es mayor a 50
-        if (nota > 50) {
-            nota = 0;
-            creditos = 0; // Puedes cambiar a null si prefieres
-        }
-
-        const clasificacion = $(columns.eq(4)).text().trim();
-        const year = $(columns.eq(5)).text().trim();
-
-        // Iniciar la impresión al encontrar "DIFERENCIAL" y seguir imprimiendo hasta encontrar "SOFTWARE"
-        if (nombreMateria.includes('DIFERENCIAL')) {
-            omitir = false;
-        }
-
-        // Detener la impresión al encontrar "SOFTWARE"
-        if (nombreMateria.includes('SOFTWARE')) {
-            omitir = true;
-        }
-
-        materias.push({
-            codMateria,
-            nombreMateria,
-            nota,
-            creditos,
-            clasificacion,
-            year
+                // Detener la captura después de "INGENIERÍA DE SOFTWARE"
+                if (nombreMateria === 'INGENIERÍA DE SOFTWARE') {
+                    return false; // Salir del bucle each
+                }
+            }
         });
     });
 
-    // Filtrar las entradas no deseadas
-    const materiasLimpias = materias.filter(entrada => {
-        for (const key in entrada) {
-            if (entrada[key] === '' || entrada[key] === null) {
-                return false;
-            }
-        }
-        return true;
-    });
-
-    return materiasLimpias;
+    // Filtrar entradas vacías o inválidas
+    return materias.filter(materia => 
+        materia.codMateria !== '' && 
+        materia.nombreMateria !== '' &&
+        materia.codMateria !== null &&
+        materia.nombreMateria !== null &&
+        !isNaN(parseInt(materia.codMateria)) // Asegurarse de que codMateria sea un número
+    );
 }
-
 
 export {
     limpiarCodigo,
