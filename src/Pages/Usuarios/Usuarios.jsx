@@ -1,7 +1,24 @@
+import React, { useState, useEffect } from "react";
 import "./styleEmploye.css";
 import Navbar from "../../Components/Navbar";
+import Papa from 'papaparse';
 
 export default function Usuarios() {
+  const [estudiantes, setEstudiantes] = useState([]);
+
+  useEffect(() => {
+    fetch('../../scripts/estudiantes.csv')
+      .then(response => response.text())
+      .then(csvText => {
+        Papa.parse(csvText, {
+          header: true,
+          complete: (results) => {
+            setEstudiantes(results.data);
+          }
+        });
+      });
+  }, []);
+
   return (
     <div>
       <Navbar></Navbar>
@@ -15,7 +32,7 @@ export default function Usuarios() {
 
         <div className="botones">
           <button className="boton">
-            <a href="/dashboard/Forms/employe" className="navbar__menu--link">
+            <a href="/Homologaciones" className="navbar__menu--link">
               Agregar Estudiantes
             </a>
           </button>
@@ -23,96 +40,27 @@ export default function Usuarios() {
         </div>
 
         <div className="contenedorEmpleados">
-          <div className="cajaEmpleado">
-            <div className="imgEmpleado">
-              <img
-                src="/src/assets/logoipsum-214.svg"
-                width={800}
-                height={400}
-                alt="Foto"
-              />
+          {estudiantes.map((estudiante, index) => (
+            <div className="cajaEmpleado" key={index}>
+              <div className="imgEmpleado">
+                <img
+                  src={estudiante.imagen || "/src/assets/avatar.png"}
+                  width={800}
+                  height={400}
+                  alt="Foto"
+                />
+              </div>
+              <h3>{estudiante.nombre}</h3>
+              <p>Código: {estudiante.codigo}</p>
+              <p>Proyecto curricular: {estudiante.proyectoCurricular}</p>
+              <p>Sede: {estudiante.sede}</p>
+              <p>Fecha de Ingreso: {estudiante.fechaIngreso}</p>
+              <div className="botonCard">
+                <button className="btnc">Eliminar Homologacion</button>
+                <button className="btnc">Ver Homologacion</button>
+              </div>
             </div>
-            <h3>Pepe Perez</h3>
-            <p> Código: EMP002</p>
-            <p>Proyecto curricular: Tec. sistematizacion </p>
-            <p>Sede: Tecnologica</p>
-            <p>Fecha de Ingreso: 02/01/2022</p>
-            <div className="botonCard">
-              <button className="btnc">Eliminar Homologacion</button>
-              <button className="btnc">Ver Homologacion</button>
-            </div>
-          </div>
-
-          <div className="cajaEmpleado">
-            <div className="imgEmpleado">
-              <img
-                src="/src/assets/react.svg"
-                width={800}
-                height={400}
-                alt="Empleado 3"
-              />
-            </div>
-            <h3>Juliana Martinez</h3>
-            <p>Código: EMP002</p>
-            <p>Proyecto curricular: Tec. Industrial </p>
-            <p>Sede: Tecnologica</p>
-            <p>Fecha de Ingreso: 02/01/2022</p>
-            <div className="botonCard">
-              <button className="btnc">Eliminar Homologacion</button>
-              <button className="btnc">Ver Homologacion</button>
-            </div>
-          </div>
-
-          <div className="cajaEmpleado">
-            <div className="imgEmpleado">
-              <img src="/img/woman.png" width={800} height={400} alt="Foto" />
-            </div>
-            <h3>Maria Alfarez</h3>
-            <p>Código: EMP002</p>
-            <p>Proyecto curricular: Tec. Civil </p>
-            <p>Sede: Tecnologica</p>
-            <p>Fecha de Ingreso: 02/01/2022</p>
-            <div className="botonCard">
-              <button className="btnc">Eliminar Homologacion</button>
-              <button className="btnc">Ver Homologacion</button>
-            </div>
-          </div>
-
-          <div className="cajaEmpleado">
-            <div className="imgEmpleado">
-              <img src="/img/man.png" width={800} height={400} alt="Foto" />
-            </div>
-            <h3>Juan Pedro Perez</h3>
-            <p>Código: EMP002</p>
-            <p>Proyecto curricular: Tec. Mecanica </p>
-            <p>Sede: Tecnologica</p>
-            <p>Fecha de Ingreso: 02/01/2022</p>
-            <div className="botonCard">
-              <button className="btnc">Eliminar Homologacion</button>
-              <button className="btnc">Ver Homologacion</button>
-            </div>
-          </div>
-
-          <div className="cajaEmpleado">
-            <div className="imgEmpleado">
-              <img
-                src="/img/iconUserF.png"
-                width={800}
-                height={400}
-                alt="Foto"
-              />
-            </div>
-            <h3>Angelica Martinez</h3>
-            <p>Código: EMP003</p>
-            <p>Cargo: Gerente</p>
-            <p>Sucursal: Sucursal C</p>
-            <p>Salario: $70,000</p>
-            <p>Fecha de Ingreso: 03/01/2022</p>
-            <div className="botonCard">
-              <button className="btnc">Eliminar Homologacion</button>
-              <button className="btnc">Ver Homologacion</button>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
     </div>
