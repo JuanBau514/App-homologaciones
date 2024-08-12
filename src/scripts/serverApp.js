@@ -3,108 +3,109 @@ import cors from 'cors';
 import multer from 'multer';
 import { readFile } from 'fs/promises';
 import { scraping_info_estudiante, scraping_materias } from './scraping.js';
-import path from 'path';
 import { createObjectCsvWriter } from 'csv-writer';
+import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = 3000;
 
-// Habilitar CORS
 app.use(cors());
+app.use(express.json());
 
-// Configurar multer para manejar archivos en la solicitud POST
 const upload = multer({ dest: 'uploads/' });
 
+// Variables globales para almacenar los datos del estudiante y las materias
 let datosEstudianteGlobal = {};
 let materiasGlobal = [];
 
-// Ruta para recibir archivos HTML mediante una solicitud POST
-app.post('/api/upload', upload.single('archivo'), async (req, res) => {
-    try {
-        const file = req.file; // Obtener el archivo del cuerpo de la solicitud
-        const htmlContent = await readFile(file.path, { encoding: 'utf-8' }); // Leer el contenido del archivo
-        const datosEstudiante = await scraping_info_estudiante(htmlContent);
-        console.log('Datos del estudiante:', datosEstudiante);
-
-        datosEstudianteGlobal = datosEstudiante; // Guardar los datos del estudiante para su posterior uso
-
-        const datosMaterias = await scraping_materias(htmlContent);
-        console.log('Materias:', datosMaterias);
-
-        materiasGlobal = datosMaterias; // Guardar las materias para su posterior uso
-
-        res.json({
-            estudiante: datosEstudiante,
-            materias: datosMaterias,
-            mensaje: 'Datos procesados correctamente.',
-        });
-    } catch (error) {
-        console.error('Error al procesar el archivo:', error);
-        res.status(500).json({ error: 'Error interno del servidor' });
-    }
+const csvWriter = createObjectCsvWriter({
+  path: path.join(__dirname, 'estudiantes.csv'),
+  header: [
+    {id: 'nombre', title: 'Nombre'},
+    {id: 'identificacion', title: 'Identificación'},
+    {id: 'codigo', title: 'Código'},
+    {id: 'correoElectronico', title: 'Correo Electrónico'},
+    {id: 'renovaciones', title: 'Renovaciones'},
+    {id: 'proyectoCurricular', title: 'Proyecto Curricular'},
+    {id: 'creditosAprobados', title: 'Créditos Aprobados'},
+  ],
+  append: true
 });
 
-app.post('/api/guardar-estudiante', async (req, res) => {
-  console.log('Cuerpo de la solicitud:', req.body); // Añade este log para depuración
-
+app.post('/api/upload', upload.single('archivo'), async (req, res) => {
   try {
-    const { estudiante, materias } = req.body;
+    const file = req.file;
+    const htmlContent = await readFile(file.path, { encoding: 'utf-8' });
+    const datosEstudiante = await scraping_info_estudiante(htmlContent);
+    const datosMaterias = await scraping_materias(htmlContent);
+    
+    // Guardar los datos en las variables globales
+    datosEstudianteGlobal = datosEstudiante;
+    materiasGlobal = datosMaterias;
 
-    if (!estudiante || !materias) {
-      return res.status(400).json({ error: 'Datos de estudiante o materias faltantes' });
-    }
-
-    const csvWriter = createObjectCsvWriter({
-      path: path.join(__dirname, 'estudiantes.csv'),
-      header: [
-        {id: 'nombre', title: 'Nombre'},
-        {id: 'identificacion', title: 'Identificación'},
-        {id: 'codigo', title: 'Código'},
-        {id: 'correoElectronico', title: 'Correo Electrónico'},
-        {id: 'renovaciones', title: 'Renovaciones'},
-        {id: 'proyectoCurricular', title: 'Proyecto Curricular'},
-        {id: 'creditosAprobados', title: 'Créditos Aprobados'},
-      ],
-      append: true
-    });
-
-    const creditosAprobados = materias.reduce((total, materia) => total + (materia.creditos || 0), 0);
-
+    const creditosAprobados = datosMaterias.reduce((total, materia) => total + (materia.creditos || 0), 0);
+    
+    // Escribir en el CSV
     await csvWriter.writeRecords([{
-      ...estudiante,
+      ...datosEstudiante,
       creditosAprobados
     }]);
 
-    res.json({ mensaje: 'Datos del estudiante guardados en CSV correctamente.' });
+    console.log('Datos escritos en CSV:', {...datosEstudiante, creditosAprobados});
+
+    res.json({
+      estudiante: datosEstudiante,
+      materias: datosMaterias,
+      mensaje: 'Datos procesados y guardados en CSV correctamente.',
+    });
   } catch (error) {
-    console.error('Error al guardar los datos en CSV:', error);
-    res.status(500).json({ error: 'Error al guardar los datos en CSV' });
+    console.error('Error al procesar el archivo:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
   }
 });
 
-// Ruta para obtener los datos del estudiante y las materias
+// Endpoint para obtener los datos del estudiante
 app.get('/api/datos-estudiante', (req, res) => {
-    try {
-        const estudiante = datosEstudianteGlobal;
-        const materias = materiasGlobal;
-
-        res.json({
-            estudiante,
-            materias,
-            creditosAprobados: materias.reduce((total, materia) => total + (materia.creditos || 0), 0),
-            mensaje: 'Datos obtenidos correctamente.',
-        });
-    } catch (error) {
-        console.error('Error al obtener los datos:', error);
-        res.status(500).json({ error: 'Error interno del servidor' });
-    }
+  try {
+    const creditosAprobados = materiasGlobal.reduce((total, materia) => total + (materia.creditos || 0), 0);
+    
+    res.json({
+      estudiante: datosEstudianteGlobal,
+      materias: materiasGlobal,
+      creditosAprobados: creditosAprobados,
+      mensaje: 'Datos obtenidos correctamente.',
+    });
+  } catch (error) {
+    console.error('Error al obtener los datos:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
+  }
 });
 
-// Iniciar el servidor
+app.get('/api/estudiantes', async (req, res) => {
+  try {
+    const csvContent = await readFile(path.join(__dirname, 'estudiantes.csv'), 'utf-8');
+    const lines = csvContent.split('\n');
+    const headers = lines[0].split(',');
+    
+    const results = lines.slice(1).map(line => {
+      const values = line.split(',');
+      return headers.reduce((obj, header, index) => {
+        obj[header.trim()] = values[index]?.trim();
+        return obj;
+      }, {});
+    }).filter(obj => Object.values(obj).some(value => value !== undefined));
+
+    res.json(results);
+  } catch (error) {
+    console.error('Error al leer el archivo CSV:', error);
+    res.status(500).json({ error: 'Error al leer los datos de estudiantes' });
+  }
+});
+
 app.listen(PORT, () => {
-    console.log(`Servidor escuchando en el puerto ${PORT}`);
+  console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
