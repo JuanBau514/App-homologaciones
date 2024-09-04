@@ -4,24 +4,38 @@ import {
 
 // Función para comparar las materias del estudiante con las materias necesarias para graduarse
 function compararMaterias(estudianteMaterias, planEstudio) {
-    const materiasAprobadas = new Set();
+    const materiasAprobadas = estudianteMaterias.filter(materia => materia.nota >= 30);
 
-    estudianteMaterias.forEach(materia => {
-        if (materia.nota >= 30) {
-            materiasAprobadas.add(materia.nombreMateria);
-        }
+    const creditosAprobados = materiasAprobadas.reduce((acc, materia) => acc + parseInt(materia.creditos, 0), 108);
+
+    const materiasDetalladas = materiasAprobadas.map(materia => {
+        return {
+            codMateria: materia.codMateria,
+            nombreMateria: materia.nombreMateria,
+            nota: materia.nota,
+            creditos: materia.creditos,
+            clasificacion: materia.clasificacion,
+            year: materia.year
+        };
     });
 
-    const creditosAprobados = [...materiasAprobadas].reduce((acc, nombreMateria) => {
-        const materia = estudianteMaterias.find(m => m.nombreMateria === nombreMateria);
-        return acc + parseInt(materia.creditos, 10);
-    }, 0);
+    const materiasPendientes = planEstudio.filter(materia => !materiasAprobadas.some(aprobada => aprobada.nombreMateria === materia.nombreMateria));
 
-    const materiasPendientes = planEstudio.filter(materia => !materiasAprobadas.has(materia.nombreMateria));
+    // Construir las materias pendientes con el nombre de la materia y el resto de los datos como null
+    const materiasPendientesDetalladas = materiasPendientes.map(materia => {
+        return {
+            codMateria: null,
+            nombreMateria: materia.nombreMateria,
+            nota: null,
+            creditos: null,
+            clasificacion: null,
+            year: null
+        };
+    }).filter(materia => materia.nombreMateria.trim() !== ''); // Filtrar para eliminar los objetos completamente vacíos
 
     return {
-        materiasAprobadas: [...materiasAprobadas],
-        materiasPendientes: materiasPendientes.map(materia => materia.nombreMateria),
+        materiasAprobadas: materiasDetalladas,
+        materiasPendientes: materiasPendientesDetalladas,
         creditosAprobados,
     };
 }

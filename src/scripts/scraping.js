@@ -5,27 +5,49 @@ import {
 async function scraping_info_estudiante(htmlContent) {
     // eslint-disable-next-line no-useless-catch
     try {
+        // Lee el archivo HTML y carga el contenido en Cheerio
         const $ = load(htmlContent);
-        const tablaEstudiante = $('td');
-        const estudianteInfo = {};
+        // Obtiene los datos del estudiante
+        const nombre = $('td:contains("No")').next().text().trim();
+        const identificacion = $('td:contains("Identifi")').next().text().trim();
+        const codigo = $('td:contains("C=C")').next().text().trim();
+        const correoElectronico = $('td:contains("E-Mail:")').next().text().trim();
+        const proyectoCurricular = $('td:contains("Carrera:")').next().text().trim();
+        const renovaciones = $('td:contains("Renovaci")').next().text().trim();
 
-        tablaEstudiante.find('tr').each((i, row) => {
-            const columns = $(row).find('td');
-            const campo = $(columns.eq(0)).text().trim().replace(':', '', ' \n ');
-            const valor = $(columns.eq(1)).text().trim();
-
-            // Agregar al objeto solo si el campo es relevante
-            const camposRelevantes = ['Nom=\nbre:', ' Nom=\nbre: ', 'C=C3=B3digo', 'Carrera =', 'Plan de E=\nstudios', 'E-Mail <=\n/td>', 'Fecha de =\nnacimiento', 'Promedio =\nAcumulado'];
-            if (camposRelevantes.includes(campo)) {
-                estudianteInfo[campo] = valor;
-            }
-        });
-
-        return estudianteInfo;
-    } catch (err) {
-        throw err;
+        // Devuelve la información del estudiante
+        return {
+            nombre: limpiarTexto(nombre),
+            identificacion: limpiarTexto(identificacion),
+            codigo: limpiarCodigo(codigo),
+            correoElectronico: limpiarTexto(correoElectronico),
+            proyectoCurricular: limpiarTexto(proyectoCurricular),
+            renovaciones
+        };
+    } catch (error) {
+        throw error;
     }
 }
+
+function limpiarCodigo(codigo) {
+    codigo = codigo.replace(/\n/g, '');
+    codigo = codigo.replace(/=/g, ''); // Elimina el signo igual (=)
+    // Reemplaza los espacios múltiples con un solo espacio
+    codigo = codigo.replace(/\s+/g, ' ');
+    codigo = codigo.slice(0, 11);
+    return codigo;
+}
+
+function limpiarTexto(texto) {
+    // Reemplaza todos los saltos de línea con un espacio en blanco
+    texto = texto.replace(/\n/g, '');
+    texto = texto.replace(/=/g, ''); // Elimina el signo igual (=)
+    // Reemplaza los espacios múltiples con un solo espacio
+    texto = texto.replace(/\s+/g, ' ');
+
+    return texto.trim(); // Elimina espacios en blanco al principio y al final
+}
+
 
 function limpiarNombreMateria(nombre) {
     // Reemplazar caracteres especiales
@@ -43,87 +65,80 @@ function limpiarNombreMateria(nombre) {
 
     return nombre.trim(); // Eliminar espacios en blanco al principio y al final
 }
+
 async function scraping_materias(htmlContent) {
-
     const $ = load(htmlContent);
-    const tablaInteres = $('td');
     const materias = [];
+    let inicioEncontrado = false;
 
-    let omitir = false;
+    // Buscar todas las tablas en la página
+    $('table').each((_, table) => {
+        // Buscar filas que contengan información de materias
+        $(table).find('tr').each((_, row) => {
+            const columns = $(row).find('td, th');
+            if (columns.length >= 6) {
+                const codMateria = $(columns.eq(0)).text().trim();
+                const nombreMateriaSucio = $(columns.eq(1)).text().trim();
+                const nombreMateria = limpiarNombreMateria(nombreMateriaSucio);
+                let nota = $(columns.eq(2)).text().trim();
+                let creditos = $(columns.eq(3)).text().trim();
+                const clasificacion = $(columns.eq(4)).text().trim();
+                const year = $(columns.eq(5)).text().trim();
 
-    tablaInteres.find('tr').each((i, row) => {
-        const columns = $(row).find('td');
-        const codMateria = $(columns.eq(0)).text().trim();
+                // Iniciar la captura cuando encontremos "CÁLCULO DIFERENCIAL"
+                if (nombreMateria === 'CÁLCULO DIFERENCIAL') {
+                    inicioEncontrado = true;
+                }
 
-        // Si encontramos "Total", establecemos omitir en true para excluir las siguientes entradas
-        if (codMateria === 'Total') {
-            omitir = true;
-            return;
-        }
+                // Validación y limpieza de datos
+                creditos = parseFloat(creditos);
+                nota = parseFloat(nota);
 
-        // Si estamos en la sección para omitir, no agregamos la entrada actual
-        if (omitir) {
-            return;
-        }
+                if (isNaN(creditos) || creditos > 5) creditos = null;
+                if (isNaN(nota) || nota > 50) nota = null;
 
-        const nombreMateriaSucio = $(columns.eq(1)).text().trim();
-        const nombreMateria = limpiarNombreMateria(nombreMateriaSucio);
-        let nota = $(columns.eq(2)).text().trim();
-        let creditos = $(columns.eq(3)).text().trim(); // Consideramos los créditos como texto
+                // Agregar la materia si estamos en el rango correcto y cumple con los criterios
+                if (inicioEncontrado && 
+                    codMateria && 
+                    nombreMateria && 
+                    !codMateria.includes('Asig') &&
+                    !nombreMateria.includes('Nomb') &&
+                    !clasificacion.includes('Clasi') &&
+                    !year.includes('A=C3') &&
+                    codMateria !== 'Total' &&
+                    !['OB', 'OC', 'EI', 'EE'].includes(codMateria)) {
+                    materias.push({
+                        codMateria,
+                        nombreMateria,
+                        nota,
+                        creditos,
+                        clasificacion,
+                        year
+                    });
+                }
 
-        // Agregar condicional para establecer créditos y nota en 0 si son mayores a 5
-        creditos = parseInt(creditos, 10); // Convertimos a número para la comparación
-        nota = parseInt(nota, 10); // Convertimos a número para la comparación
-
-        creditos = creditos > 5 ? 0 : creditos; // Establecemos en 0 si son mayores a 5
-        nota = creditos === 0 ? 0 : nota; // Establecemos en 0 si los créditos son 0
-
-        // Agregar condicional para establecer nota y créditos en 0 o null si la nota es mayor a 50
-        if (nota > 50) {
-            nota = 0;
-            creditos = 0; // Puedes cambiar a null si prefieres
-        }
-
-        const clasificacion = $(columns.eq(4)).text().trim();
-        const year = $(columns.eq(5)).text().trim();
-
-        // Iniciar la impresión al encontrar "DIFERENCIAL" y seguir imprimiendo hasta encontrar "SOFTWARE"
-        if (nombreMateria.includes('DIFERENCIAL')) {
-            omitir = false;
-        }
-
-        // Detener la impresión al encontrar "SOFTWARE"
-        if (nombreMateria.includes('SOFTWARE')) {
-            omitir = true;
-        }
-
-        materias.push({
-            codMateria,
-            nombreMateria,
-            nota,
-            creditos,
-            clasificacion,
-            year
+                // Detener la captura después de "INGENIERÍA DE SOFTWARE"
+                if (nombreMateria === 'INGENIERÍA DE SOFTWARE') {
+                    return false; // Salir del bucle each
+                }
+            }
         });
     });
 
-    // Filtrar las entradas no deseadas
-    const materiasLimpias = materias.filter(entrada => {
-        for (const key in entrada) {
-            if (entrada[key] === '' || entrada[key] === null) {
-                return false;
-            }
-        }
-        return true;
-    });
-
-    return materiasLimpias;
+    // Filtrar entradas vacías o inválidas
+    return materias.filter(materia => 
+        materia.codMateria !== '' && 
+        materia.nombreMateria !== '' &&
+        materia.codMateria !== null &&
+        materia.nombreMateria !== null &&
+        !isNaN(parseInt(materia.codMateria)) // Asegurarse de que codMateria sea un número
+    );
 }
 
-
 export {
+    limpiarCodigo,
+    limpiarTexto,
     limpiarNombreMateria,
     scraping_info_estudiante,
     scraping_materias,
-
 };

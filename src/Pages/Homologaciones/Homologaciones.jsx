@@ -6,6 +6,7 @@ import axios from "axios";
 
 export default function Homologacion() {
   const [archivoSeleccionado, setArchivoSeleccionado] = useState(null);
+  const [mensaje, setMensaje] = useState('');
 
   const handleArchivoSeleccionado = (event) => {
     setArchivoSeleccionado(event.target.files[0]);
@@ -16,15 +17,17 @@ export default function Homologacion() {
       const formData = new FormData();
       formData.append("archivo", archivoSeleccionado);
 
-      await axios.post("http://localhost:3000/api/upload", formData, {
+      const response = await axios.post("http://localhost:3000/api/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
 
-      console.log("Archivo enviado correctamente al servidor.");
+      console.log("Respuesta del servidor:", response.data);
+      setMensaje(response.data.mensaje);
     } catch (error) {
       console.error("Error al enviar el archivo al servidor:", error);
+      setMensaje("Error al procesar el archivo.");
     }
   };
 
