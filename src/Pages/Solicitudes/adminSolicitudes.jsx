@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 import Navbar from "../../Components/Navbar";
+
 // Guardar y cargar datos del estado en LocalStorage
 const saveToLocalStorage = (data) => {
   localStorage.setItem("solicitudes", JSON.stringify(data));
@@ -20,11 +21,9 @@ const loadFromLocalStorage = () => {
 
 function parseExcelDate(excelDate) {
   if (typeof excelDate === 'number') {
-    // Los números de fecha de Excel están basados en días desde el 1 de enero de 1900
-    const excelBaseDate = new Date(1900, 0, 0 ); // 1 de enero de 1900
+    const excelBaseDate = new Date(1900, 0, 1); // 1 de enero de 1900
     return new Date(excelBaseDate.getTime() + (excelDate - 1) * 24 * 60 * 60 * 1000); // Ajustar por días
   } else if (typeof excelDate === 'string') {
-    // Si es una cadena, se divide se crea una fecha
     const [datePart, timePart] = excelDate.split(' ');
     const [day, month, year] = datePart.split('/').map(Number);
     const [hours, minutes, seconds] = timePart ? timePart.split(':').map(Number) : [0, 0, 0];
@@ -34,11 +33,9 @@ function parseExcelDate(excelDate) {
   }
 }
 
-
-
 export default function AdminSolicitudes() {
-
-    const [excelData, setExcelData] = useState(loadFromLocalStorage);
+  const [excelData, setExcelData] = useState(loadFromLocalStorage);
+  const [filter, setFilter] = useState("Todos"); // Estado para el filtro
 
   // Función para procesar el archivo Excel
   const handleFileUpload = (event) => {
@@ -77,6 +74,10 @@ export default function AdminSolicitudes() {
     }
   };
 
+  // Filtrar los datos según el estado
+  const filteredData = filter === "Todos"
+    ? excelData
+    : excelData.filter(row => row.Estado === filter);
 
   return (
     <div className="flex flex-col w-full min-h-screen bg-[#fcf2e8]">
@@ -88,27 +89,34 @@ export default function AdminSolicitudes() {
         </a>
         <Navbar />
         <nav className="hidden font-medium sm:flex flex-row items-center gap-5 text-sm lg:gap-6">
-          
-          <a href="#" className="font-bold">
+          <a 
+            href="#"
+            className={`font-bold ${filter === "Aprobado" ? "text-blue-600" : "text-gray-500 dark:text-gray-400"}`}
+            onClick={() => setFilter("Aprobado")}
+          >
             Aprobadas
           </a>
-          <a href="#" className="text-gray-500 dark:text-gray-400">
+          <a 
+            href="#"
+            className={`text-gray-500 dark:text-gray-400 ${filter === "Rechazado" ? "text-blue-600" : ""}`}
+            onClick={() => setFilter("Rechazado")}
+          >
             Rechazadas
           </a>
-          {/*
-          <a href="#" className="text-gray-500 dark:text-gray-400">
-            Estadísticas
+          <a 
+            href="#"
+            className={`text-gray-500 dark:text-gray-400 ${filter === "En Espera" ? "text-blue-600" : ""}`}
+            onClick={() => setFilter("En Espera")}
+          >
+            En Espera
           </a>
-          */
-          }
-          <a href="#" className="text-gray-500 dark:text-gray-400">
+          <a href="/Configuracion" className="text-gray-500 dark:text-gray-400">
             Configuraciones
           </a>
-          <a href="#" className="text-gray-500 dark:text-gray-400">
+          <a href="/Homologaciones" className="text-gray-500 dark:text-gray-400">
             Nueva Homologacion
           </a>
         </nav>
-       
       </header>
 
       <main className="flex min-h-[calc(100vh-_theme(spacing.16))] bg-gray-100/40 flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10 dark:bg-gray-800/40">
@@ -123,8 +131,8 @@ export default function AdminSolicitudes() {
 
         {/* Mostrar los datos del Excel */}
         <div className="grid gap-6 max-w-6xl w-full mx-auto">
-          {excelData.length > 0 &&
-            excelData.map((row, index) => (
+          {filteredData.length > 0 &&
+            filteredData.map((row, index) => (
               <div
                 key={index}
                 className="flex flex-col lg:flex-row bg-white text-sm p-2 relative dark:bg-gray-950"
@@ -138,7 +146,6 @@ export default function AdminSolicitudes() {
                 <SeparatorVertical className="my-2 lg:hidden" />
                 <div className="p-2 grid gap-1 flex-1">
                   <div className="flex items-start gap-2">
-                    {/* Asignar color dinámicamente según el estado */}
                     <span
                       className={`inline-flex w-3 h-3 rounded-full translate-y-1 ${getStatusColor(
                         row.Estado
@@ -180,7 +187,6 @@ export default function AdminSolicitudes() {
             ))}
         </div>
       </main>
-      
     </div>
   );
 }
