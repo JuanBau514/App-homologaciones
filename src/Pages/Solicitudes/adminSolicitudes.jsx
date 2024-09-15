@@ -1,170 +1,186 @@
+import * as XLSX from "xlsx";
+import { useState, useEffect } from "react";
 import {
   Frame,
-  CalendarDays,
-  ChevronDownCircle,
   SeparatorVertical,
   GitBranch,
   GitCommitHorizontal,
 } from "lucide-react";
 
 import Navbar from "../../Components/Navbar";
+// Guardar y cargar datos del estado en LocalStorage
+const saveToLocalStorage = (data) => {
+  localStorage.setItem("solicitudes", JSON.stringify(data));
+};
+
+const loadFromLocalStorage = () => {
+  const savedData = localStorage.getItem("solicitudes");
+  return savedData ? JSON.parse(savedData) : [];
+};
+
+function parseExcelDate(excelDate) {
+  if (typeof excelDate === 'number') {
+    // Los números de fecha de Excel están basados en días desde el 1 de enero de 1900
+    const excelBaseDate = new Date(1900, 0, 0 ); // 1 de enero de 1900
+    return new Date(excelBaseDate.getTime() + (excelDate - 1) * 24 * 60 * 60 * 1000); // Ajustar por días
+  } else if (typeof excelDate === 'string') {
+    // Si es una cadena, se divide se crea una fecha
+    const [datePart, timePart] = excelDate.split(' ');
+    const [day, month, year] = datePart.split('/').map(Number);
+    const [hours, minutes, seconds] = timePart ? timePart.split(':').map(Number) : [0, 0, 0];
+    return new Date(year, month - 1, day, hours, minutes, seconds);
+  } else {
+    return null; // Si no es ni número ni cadena, no podemos procesar
+  }
+}
+
+
 
 export default function AdminSolicitudes() {
+
+    const [excelData, setExcelData] = useState(loadFromLocalStorage);
+
+  // Función para procesar el archivo Excel
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      const data = new Uint8Array(e.target.result);
+      const workbook = XLSX.read(data, { type: "array" });
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
+      const jsonData = XLSX.utils.sheet_to_json(sheet);
+      setExcelData(jsonData);
+      saveToLocalStorage(jsonData); // Guardar datos en LocalStorage
+    };
+
+    reader.readAsArrayBuffer(file);
+  };
+
+  // Guardar datos en LocalStorage cada vez que cambian
+  useEffect(() => {
+    saveToLocalStorage(excelData);
+  }, [excelData]);
+
+  // Función para asignar color al círculo según el estado
+  const getStatusColor = (estado) => {
+    switch (estado) {
+      case "Aprobado":
+        return "bg-green-400";
+      case "Rechazado":
+        return "bg-red-400";
+      case "En Espera":
+        return "bg-yellow-400";
+      default:
+        return "bg-gray-400"; // Por defecto si no tiene estado definido
+    }
+  };
+
+
   return (
     <div className="flex flex-col w-full min-h-screen bg-[#fcf2e8]">
       <header className="flex items-center justify-between h-16 px-4 border-b shrink-0 md:px-6">
         <a href="#">
           <a className="flex items-center gap-2 text-lg font-semibold sm:text-base mr-4">
             <Frame className="w-6 h-6" />
-            <span className="sr-only">Acme Inc</span>
           </a>
         </a>
         <Navbar />
         <nav className="hidden font-medium sm:flex flex-row items-center gap-5 text-sm lg:gap-6">
-          <a href="#" className="text-gray-500 dark:text-gray-400">
-            Solicitudes
-          </a>
+          
           <a href="#" className="font-bold">
             Aprobadas
           </a>
           <a href="#" className="text-gray-500 dark:text-gray-400">
             Rechazadas
           </a>
+          {/*
           <a href="#" className="text-gray-500 dark:text-gray-400">
             Estadísticas
           </a>
+          */
+          }
           <a href="#" className="text-gray-500 dark:text-gray-400">
             Configuraciones
           </a>
           <a href="#" className="text-gray-500 dark:text-gray-400">
-            Soporte
+            Nueva Homologacion
           </a>
         </nav>
-        <div className="flex items-center gap-4 md:gap-2 lg:gap-4">
-          <button className="rounded-full p-2 bg-white border">
-            <img
-              alt="Avatar"
-              className="rounded-full"
-              height="32"
-              src="/placeholder.svg"
-              style={{
-                aspectRatio: "32/32",
-                objectFit: "cover",
-              }}
-              width="32"
-            />
-            <span className="sr-only">Toggle user menu</span>
-          </button>
-        </div>
+       
       </header>
+
       <main className="flex min-h-[calc(100vh-_theme(spacing.16))] bg-gray-100/40 flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10 dark:bg-gray-800/40">
         <div className="max-w-6xl w-full mx-auto grid gap-2">
-          <h1 className="font-semibold text-3xl">
-            Solicitudes de Homologación
-          </h1>
+          <h1 className="font-semibold text-3xl">Solicitudes de Homologación</h1>
         </div>
+
+        {/* Botón para subir el archivo Excel */}
+        <div className="flex justify-center">
+          <input type="file" accept=".xlsx, .xls" onChange={handleFileUpload} />
+        </div>
+
+        {/* Mostrar los datos del Excel */}
         <div className="grid gap-6 max-w-6xl w-full mx-auto">
-          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
-            <input
-              className="bg-white md:flex-1 dark:bg-gray-950 p-2 rounded"
-              placeholder="Buscar solicitudes..."
-              type="search"
-            />
-            <div className="flex items-center gap-4">
-              <button className="pl-3 flex-1 bg-white justify-start border rounded">
-                <CalendarDays className="mr-2 h-4 w-4 shrink-0" />
-                Seleccionar Fecha
-              </button>
-              <div className="relative">
-                <button className="bg-white dark:bg-gray-950 border rounded">
-                  Estado
-                  <ChevronDownCircle className="ml-2 h-4 w-4" />
-                </button>
-                <div className="absolute right-0 mt-2 p-2 bg-white dark:bg-gray-950 border rounded hidden">
-                  <label className="flex items-center space-x-2">
-                    <input type="checkbox" checked />
-                    <span>Pendiente</span>
-                  </label>
-                  <label className="flex items-center space-x-2">
-                    <input type="checkbox" />
-                    <span>Aprobado</span>
-                  </label>
-                  <label className="flex items-center space-x-2">
-                    <input type="checkbox" />
-                    <span>Rechazado</span>
-                  </label>
+          {excelData.length > 0 &&
+            excelData.map((row, index) => (
+              <div
+                key={index}
+                className="flex flex-col lg:flex-row bg-white text-sm p-2 relative dark:bg-gray-950"
+              >
+                <div className="p-2 grid gap-1 flex-1">
+                  <div className="font-medium">{row["Cual es su nombre?"]}</div>
+                  <div className="text-gray-500 dark:text-gray-400">
+                    Solicitud de Homologación
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="border rounded-lg overflow-hidden grid gap-4 lg:gap-px lg:bg-gray-100">
-            {/* First item */}
-            <div className="flex flex-col lg:flex-row bg-white text-sm p-2 relative dark:bg-gray-950">
-              <div className="p-2 grid gap-1 flex-1">
-                <div className="font-medium">Juan Pérez</div>
-                <div className="text-gray-500 dark:text-gray-400">
-                  Solicitud de Homologación
-                </div>
-              </div>
-              <SeparatorVertical className="my-2 lg:hidden" />
-              <div className="p-2 grid gap-1 flex-1">
-                <div className="flex items-start gap-2">
-                  <span className="inline-flex w-3 h-3 bg-green-400 rounded-full translate-y-1" />
-                  <div>
-                    Aprobado
-                    <div className="text-gray-500 dark:text-gray-400">
-                      1m 23s
+                <SeparatorVertical className="my-2 lg:hidden" />
+                <div className="p-2 grid gap-1 flex-1">
+                  <div className="flex items-start gap-2">
+                    {/* Asignar color dinámicamente según el estado */}
+                    <span
+                      className={`inline-flex w-3 h-3 rounded-full translate-y-1 ${getStatusColor(
+                        row.Estado
+                      )}`}
+                    />
+                    <div>
+                      Estado: {row.Estado}
+                      <div className="text-gray-500 dark:text-gray-400">
+                        {parseExcelDate(row["Hora de inicio"]).toLocaleString('es-ES', {
+                          day: '2-digit',
+                          month: '2-digit',
+                          year: 'numeric',
+                          hour: '2-digit',
+                          minute: '2-digit',
+                          second: '2-digit',
+                        })}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <SeparatorVertical className="my-2 lg:hidden" />
-              <div className="p-2 grid gap-1 flex-1">
-                <div className="flex items-center gap-2">
-                  <GitBranch className="w-4 h-4" />
-                  Curso 3
+                <SeparatorVertical className="my-2 lg:hidden" />
+                <div className="p-2 grid gap-1 flex-1">
+                  <div className="flex items-center gap-2">
+                    <GitBranch className="w-4 h-4" />
+                    Carrera: {row.Carrera}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <GitCommitHorizontal className="w-4 h-4" />
+                    Código: {row.Codigo}
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <GitCommitHorizontal className="w-4 h-4" />
-                  <span className="line-clamp-1">
-                    Curso Equivalente: Curso 4
-                  </span>
-                </div>
-              </div>
-              <SeparatorVertical className="my-2 lg:hidden" />
-              <div className="p-2 grid gap-1 flex-1">
-                <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400">
-                  32m ago by maxleiter
+                <SeparatorVertical className="my-2 lg:hidden" />
+                <div className="p-2 grid gap-1 flex-1">
+                  <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400">
+                    {row.Correo}
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Second item */}
-            <div className="flex flex-col lg:flex-row bg-white text-sm p-2 relative dark:bg-gray-950">
-              <div className="p-2 grid gap-1 flex-1">
-                <div className="font-medium">María López</div>
-                <div className="text-gray-500 dark:text-gray-400">
-                  Solicitud de Homologación
-                </div>
-              </div>
-              {/* ... (rest of the content for the second item) */}
-            </div>
-
-            {/* Third item */}
-            <div className="flex flex-col lg:flex-row bg-white text-sm p-2 relative dark:bg-gray-950">
-              <div className="p-2 grid gap-1 flex-1">
-                <div className="font-medium">Pedro Martínez</div>
-                <div className="text-gray-500 dark:text-gray-400">
-                  Solicitud de Homologación
-                </div>
-              </div>
-              {/* ... (rest of the content for the third item) */}
-            </div>
-          </div>
+            ))}
         </div>
       </main>
+      
     </div>
   );
 }
-
-// Other icons remain unchanged
