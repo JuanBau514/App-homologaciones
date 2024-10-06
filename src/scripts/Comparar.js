@@ -40,11 +40,10 @@ function compararMaterias(estudianteMaterias, planEstudio) {
     };
 }
 
-
 // Cargar los datos de los archivos JSON
 const cargarDatos = () => {
     const datosEstudiante = JSON.parse(readFileSync('materias_estudiante.json', 'utf-8'));
-    const materiasGraduacion = JSON.parse(readFileSync("./sistematizacion/Tecnologia-planEstudio-239.json", 'utf-8'));
+    const materiasGraduacion = JSON.parse(readFileSync("./sistematizacion/IngSistematizacion-239.json", 'utf-8'));
     return {
         datosEstudiante,
         materiasGraduacion

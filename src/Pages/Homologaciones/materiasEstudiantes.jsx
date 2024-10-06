@@ -55,7 +55,7 @@ export default function MateriasEstudiante() {
         doc.setFontSize(12);
         doc.text(`Programa: Tecnología en sistematización de datos`, 20, yPos);
         yPos += 10;
-        doc.text(`Plan de estudio: 286`, 20, yPos);
+        doc.text(`Plan de estudio: 239`, 20, yPos);
         yPos += 10;
         doc.text(`Créditos aprobados: ${datos.creditosAprobados}`, 20, yPos);
         yPos += 20;
@@ -132,7 +132,7 @@ export default function MateriasEstudiante() {
             </div>
             <div className="space-x-10 flex justify-end">
             <p className="text-gray-500 md:text-base/relaxed dark:text-gray-200">
-                Tecnología / plan de estudio 286
+                Tecnología / plan de estudio 339
             </p>
            <button onClick={generarPDF} className=" justify-end bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded">
               Descargar reporte del estudiante
@@ -247,7 +247,7 @@ export default function MateriasEstudiante() {
                     Créditos: {materia.creditos || 'N/A'}
                   </p>
                   <p className="text-gray-500">
-                    Clasificación: {materia.clasificacion || 'N/A'}
+                    Clasificación: {materia.clasificacion || 'N/A'}                    
                   </p>
                 </div>
               ))}
@@ -258,7 +258,6 @@ export default function MateriasEstudiante() {
         </div>
 
         <br />
-        
         <br />
         
         <div className="space-y-2">
@@ -294,7 +293,6 @@ export default function MateriasEstudiante() {
         </div>
       </div>
     </div>
-
   );
 }
 

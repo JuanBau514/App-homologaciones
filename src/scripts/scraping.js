@@ -117,7 +117,7 @@ async function scraping_materias(htmlContent) {
                     });
                 }
 
-                // Detener la captura después de "INGENIERÍA DE SOFTWARE"
+                // Detener la captura después de "INGENIERÍA DE SOFTWARE -  GERENCIA Y AUDITORÍA EN REDES"
                 if (nombreMateria === 'INGENIERÍA DE SOFTWARE') {
                     return false; // Salir del bucle each
                 }
