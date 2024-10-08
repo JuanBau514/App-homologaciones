@@ -2,162 +2,170 @@
   {
     "codMateria": "1",
     "nombreMateria": "CÁLCULO DIFERENCIAL",
-    "nota": 30,
+    "nota": 41,
     "creditos": 4,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2021"
   },
   {
     "codMateria": "4",
     "nombreMateria": "CÁTEDRA FRANCISCO JOSÉ DE CALDAS",
-    "nota": 35,
+    "nota": 33,
     "creditos": 1,
     "clasificacion": "OC",
-    "year": "2017"
+    "year": "2021"
   },
   {
     "codMateria": "9",
     "nombreMateria": "ÁLGEBRA LINEAL",
-    "nota": 30,
+    "nota": 40,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2021"
   },
   {
     "codMateria": "12",
     "nombreMateria": "CÁTEDRA DEMOCRACIA Y CIUDADANÍA",
-    "nota": 37,
+    "nota": 36,
     "creditos": 1,
     "clasificacion": "OC",
-    "year": "2016"
+    "year": "2021"
   },
   {
     "codMateria": "1054",
     "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS I",
-    "nota": 45,
+    "nota": 43,
     "creditos": 3,
     "clasificacion": "OC",
-    "year": "2017"
+    "year": "2021"
   },
   {
     "codMateria": "1507",
     "nombreMateria": "INTRODUCCIÓN A ALGORITMOS",
-    "nota": 30,
+    "nota": 39,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2021"
   },
   {
     "codMateria": "1508",
     "nombreMateria": "LÓGICA MATEMÁTICA",
-    "nota": 35,
+    "nota": 43,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2021"
   },
   {
     "codMateria": "3",
     "nombreMateria": "FÍSICA I: MECÁNICA NEWTONIANA",
-    "nota": 30,
+    "nota": 42,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2022"
   },
   {
     "codMateria": "7",
     "nombreMateria": "CÁLCULO INTEGRAL",
-    "nota": 30,
+    "nota": 31,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2022"
   },
   {
     "codMateria": "1056",
     "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS II",
-    "nota": 40,
+    "nota": 42,
     "creditos": 2,
     "clasificacion": "OC",
-    "year": "2017"
+    "year": "2021"
   },
   {
     "codMateria": "1072",
     "nombreMateria": "ADMINISTRACIÓN",
-    "nota": 30,
+    "nota": 35,
     "creditos": 3,
     "clasificacion": "OC",
-    "year": "2017"
+    "year": "2021"
   },
   {
     "codMateria": "1082",
     "nombreMateria": "CÁTEDRA DE CONTEXTO",
-    "nota": 37,
+    "nota": 50,
     "creditos": 1,
     "clasificacion": "OC",
-    "year": "2016"
+    "year": "2021"
   },
   {
     "codMateria": "1513",
     "nombreMateria": "ESTRUCTURA DE DATOS",
-    "nota": 30,
+    "nota": 41,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2022"
   },
   {
     "codMateria": "1514",
     "nombreMateria": "PROGRAMACIÓN ORIENTADA A OBJETOS",
-    "nota": 35,
+    "nota": 34,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2022"
   },
   {
     "codMateria": "13",
     "nombreMateria": "FÍSICA II: ELECTROMAGNETISMO",
-    "nota": 40,
+    "nota": 31,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2022"
   },
   {
     "codMateria": "1060",
     "nombreMateria": "CIENCIA TECNOLOGÍA Y SOCIEDAD",
-    "nota": 45,
+    "nota": 40,
     "creditos": 2,
     "clasificacion": "OC",
-    "year": "2017"
+    "year": "2022"
   },
   {
     "codMateria": "1503",
     "nombreMateria": "CONTABILIDAD GENERAL",
-    "nota": 40,
+    "nota": 31,
+    "creditos": 2,
+    "clasificacion": "E",
+    "year": "2022"
+  },
+  {
+    "codMateria": "1509",
+    "nombreMateria": "FUNDAMENTOS DE ORGANIZACIÓN",
+    "nota": 36,
     "creditos": 2,
     "clasificacion": "EI",
-    "year": "2017"
+    "year": "2022"
   },
   {
     "codMateria": "1518",
     "nombreMateria": "PROGRAMACIÓN MULTINIVEL",
-    "nota": 35,
+    "nota": 36,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2023"
   },
   {
     "codMateria": "1519",
     "nombreMateria": "BASES DE DATOS",
-    "nota": 40,
+    "nota": 45,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2023"
   },
   {
     "codMateria": "9901",
     "nombreMateria": "SEGUNDA LENGUA I - INGLÉS",
-    "nota": 35,
+    "nota": 44,
     "creditos": 2,
     "clasificacion": "OC",
-    "year": "2017"
+    "year": "2023"
   },
   {
     "codMateria": "1075",
@@ -165,350 +173,134 @@
     "nota": 40,
     "creditos": 2,
     "clasificacion": "OC",
-    "year": "2017"
+    "year": "2022"
   },
   {
-    "codMateria": "1511",
-    "nombreMateria": "TIC'S EN LAS ORGANIZACIONES",
-    "nota": 35,
+    "codMateria": "1510",
+    "nombreMateria": "FUNDAMENTOS DE ECONOMÍA",
+    "nota": 37,
     "creditos": 2,
     "clasificacion": "EI",
-    "year": "2017"
+    "year": "2023"
   },
   {
     "codMateria": "1515",
     "nombreMateria": "ANÁLISIS Y MÉTODOS NUMÉRICOS",
-    "nota": 30,
+    "nota": 33,
     "creditos": 3,
     "clasificacion": "EI",
-    "year": "2017"
+    "year": "2023"
   },
   {
     "codMateria": "1524",
     "nombreMateria": "PROGRAMACIÓN AVANZADA",
-    "nota": 40,
+    "nota": 48,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2023"
   },
   {
     "codMateria": "1526",
     "nombreMateria": "DISEÑO LÓGICO",
-    "nota": 35,
+    "nota": 45,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2023"
   },
   {
     "codMateria": "9902",
     "nombreMateria": "SEGUNDA LENGUA II - INGLES",
-    "nota": 45,
+    "nota": 32,
     "creditos": 2,
     "clasificacion": "OC",
-    "year": "2017"
+    "year": "2023"
   },
   {
     "codMateria": "1516",
     "nombreMateria": "ANÁLISIS SOCIAL COLOMBIANO",
-    "nota": 45,
+    "nota": 40,
     "creditos": 2,
     "clasificacion": "EE",
-    "year": "2017"
+    "year": "2023"
   },
   {
     "codMateria": "1531",
     "nombreMateria": "ANÁLISIS DE SISTEMAS",
-    "nota": 40,
+    "nota": 32,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2024"
   },
   {
     "codMateria": "1533",
     "nombreMateria": "SISTEMAS OPERACIONALES",
-    "nota": 35,
+    "nota": 44,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2023"
   },
   {
     "codMateria": "1535",
     "nombreMateria": "TRANSMISIÓN DE DATOS",
-    "nota": 35,
+    "nota": 32,
     "creditos": 3,
     "clasificacion": "EI",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1536",
-    "nombreMateria": "PROGRAMACIÓN WEB",
-    "nota": 45,
-    "creditos": 3,
-    "clasificacion": "EI",
-    "year": "2017"
+    "year": "2023"
   },
   {
     "codMateria": "1537",
     "nombreMateria": "TALLER DE INVESTIGACIÓN",
-    "nota": 35,
+    "nota": 50,
     "creditos": 2,
     "clasificacion": "OB",
-    "year": "2017"
+    "year": "2023"
   },
   {
-    "codMateria": "1446",
-    "nombreMateria": "TRABAJO DE GRADO TECNOLÓGICO",
-    "nota": 48,
-    "creditos": 2,
-    "clasificacion": "OB",
-    "year": "2017"
+    "codMateria": "7202",
+    "nombreMateria": "APLICACIONES PARA INTERNET",
+    "nota": 44,
+    "creditos": 3,
+    "clasificacion": "EI",
+    "year": "2024"
   },
   {
     "codMateria": "1532",
     "nombreMateria": "INTELIGENCIA ARTIFICIAL",
-    "nota": 31,
+    "nota": 30,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1539",
-    "nombreMateria": "ARQUITECTURA DE COMPUTADORES",
-    "nota": 36,
-    "creditos": 2,
-    "clasificacion": "OB",
-    "year": "2017"
+    "year": "2024"
   },
   {
     "codMateria": "1540",
     "nombreMateria": "GLOBALIZACIÓN",
-    "nota": 40,
+    "nota": 39,
     "creditos": 2,
     "clasificacion": "EE",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1541",
-    "nombreMateria": "FUNDAMENTOS DE TELEMÁTICA",
-    "nota": 42,
-    "creditos": 3,
-    "clasificacion": "EI",
-    "year": "2017"
+    "year": "2024"
   },
   {
     "codMateria": "1542",
     "nombreMateria": "PROGRAMACIÓN POR COMPONENTES",
-    "nota": 33,
+    "nota": 42,
     "creditos": 3,
     "clasificacion": "EI",
-    "year": "2017"
+    "year": "2024"
   },
   {
     "codMateria": "9903",
     "nombreMateria": "SEGUNDA LENGUA III - INGLÉS",
-    "nota": 35,
+    "nota": 34,
     "creditos": 2,
     "clasificacion": "OC",
-    "year": "2017"
-  },
-  {
-    "codMateria": "16",
-    "nombreMateria": "CÁLCULO MULTIVARIADO",
-    "nota": 31,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1619",
-    "nombreMateria": "INGENIERÍA ECONÓMICA",
-    "nota": 44,
-    "creditos": 3,
-    "clasificacion": "OC",
-    "year": "2018"
-  },
-  {
-    "codMateria": "1619",
-    "nombreMateria": "INGENIERÍA ECONÓMICA",
-    "nota": 28,
-    "creditos": 3,
-    "clasificacion": "OC",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1808",
-    "nombreMateria": "PROBABILIDAD Y ESTADÍSTICA",
-    "nota": 36,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2017"
-  },
-  {
-    "codMateria": "7208",
-    "nombreMateria": "SISTEMAS DISTRIBUIDOS",
-    "nota": 35,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2017"
-  },
-  {
-    "codMateria": "7209",
-    "nombreMateria": "TEORÍA GENERAL DE SISTEMAS",
-    "nota": 32,
-    "creditos": 2,
-    "clasificacion": "OB",
-    "year": "2017"
-  },
-  {
-    "codMateria": "7218",
-    "nombreMateria": "TECNOCIENCIAS",
-    "nota": 45,
-    "creditos": 2,
-    "clasificacion": "EE",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1428",
-    "nombreMateria": "FÍSICA III: ONDAS Y FÍSICA MODERNA",
-    "nota": 30,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2018"
-  },
-  {
-    "codMateria": "1608",
-    "nombreMateria": "FORMULACIÓN Y EVALUACIÓN DE PROYECTOS",
-    "nota": 31,
-    "creditos": 3,
-    "clasificacion": "OC",
-    "year": "2018"
-  },
-  {
-    "codMateria": "7210",
-    "nombreMateria": "ANÁLISIS DE FOURIER",
-    "nota": 36,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2018"
-  },
-  {
-    "codMateria": "7211",
-    "nombreMateria": "REDES CORPORATIVAS",
-    "nota": 37,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2018"
-  },
-  {
-    "codMateria": "7212",
-    "nombreMateria": "SISTEMAS ABIERTOS",
-    "nota": 41,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2018"
-  },
-  {
-    "codMateria": "7213",
-    "nombreMateria": "TEORÍA DE LA INFORMACIÓN",
-    "nota": 42,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2019"
-  },
-  {
-    "codMateria": "7214",
-    "nombreMateria": "PLANIFICACIÓN Y DISEÑO DE REDES",
-    "nota": 36,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2018"
-  },
-  {
-    "codMateria": "7215",
-    "nombreMateria": "REDES DE ALTA VELOCIDAD",
-    "nota": 30,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2019"
-  },
-  {
-    "codMateria": "7216",
-    "nombreMateria": "SEGURIDAD EN REDES",
-    "nota": 40,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2018"
-  },
-  {
-    "codMateria": "7219",
-    "nombreMateria": "COMPUTACIÓN CUÁNTICA",
-    "nota": 45,
-    "creditos": 3,
-    "clasificacion": "EI",
-    "year": "2018"
-  },
-  {
-    "codMateria": "7221",
-    "nombreMateria": "CRIPTOLOGÍA",
-    "nota": 37,
-    "creditos": 3,
-    "clasificacion": "EI",
-    "year": "2019"
-  },
-  {
-    "codMateria": "7217",
-    "nombreMateria": "GERENCIA Y AUDITORÍA EN REDES",
-    "nota": 36,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2019"
-  },
-  {
-    "codMateria": "7223",
-    "nombreMateria": "ANÁLISIS DE DATOS",
-    "nota": 31,
-    "creditos": 3,
-    "clasificacion": "EI",
-    "year": "2019"
-  },
-  {
-    "codMateria": "7226",
-    "nombreMateria": "REDES INALÁMBRICAS",
-    "nota": 37,
-    "creditos": 3,
-    "clasificacion": "EI",
-    "year": "2019"
-  },
-  {
-    "codMateria": "7227",
-    "nombreMateria": "GESTIÓN DE CALIDAD",
-    "nota": 43,
-    "creditos": 2,
-    "clasificacion": "EE",
-    "year": "2019"
-  },
-  {
-    "codMateria": "88",
-    "nombreMateria": "ECUACIONES DIFERENCIALES",
-    "nota": 30,
-    "creditos": 3,
-    "clasificacion": "CP",
-    "year": "2017"
+    "year": "2024"
   },
   {
     "codMateria": "1525",
     "nombreMateria": "BASES DE DATOS AVANZADAS",
-    "nota": 40,
+    "nota": 33,
     "creditos": 3,
     "clasificacion": "CP",
-    "year": "2017"
-  },
-  {
-    "codMateria": "1538",
-    "nombreMateria": "INGENIERÍA DE SOFTWARE",
-    "nota": 39,
-    "creditos": 3,
-    "clasificacion": "CP",
-    "year": "2017"
+    "year": "2023"
   }
 ]
