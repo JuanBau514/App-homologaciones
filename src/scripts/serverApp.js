@@ -5,6 +5,8 @@ import { readFile, writeFile } from 'fs/promises'; // Usamos writeFile para sobr
 import { scraping_info_estudiante, scraping_materias } from './scraping.js';
 import { createObjectCsvWriter } from 'csv-writer';
 import path from 'path';
+import fs from 'fs';
+import Papa from 'papaparse';
 import { fileURLToPath } from 'url';
 import {compararMaterias} from'./Comparar.js';
 
@@ -142,6 +144,35 @@ app.get('/api/estudiantes', async (req, res) => {
     console.error('Error al leer el archivo CSV:', error);
     res.status(500).json({ error: 'Error al leer los datos de estudiantes' });
   }
+});
+
+app.delete('/api/eliminar-ultimo-estudiante', (req, res) => {
+  const filePath = path.join(__dirname, './estudiantes.csv');
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error al leer el archivo:', err);
+      return res.status(500).json({ error: 'Error al leer el archivo.' });
+    }
+
+    const parsedData = Papa.parse(data, { header: false }).data;
+
+    if (parsedData.length > 1) {
+      parsedData.pop(); // Eliminar la última fila
+      const csv = Papa.unparse(parsedData);
+
+      fs.writeFile(filePath, csv, (err) => {
+        if (err) {
+          console.error('Error al escribir en el archivo:', err);
+          return res.status(500).json({ error: 'Error al escribir en el archivo.' });
+        }
+        res.json({ message: 'Último registro eliminado' });
+      });
+    } else {
+      console.warn('No hay registros para eliminar');
+      res.status(400).json({ message: 'No hay registros para eliminar' });
+    }
+  });
 });
 
 app.listen(PORT, () => {

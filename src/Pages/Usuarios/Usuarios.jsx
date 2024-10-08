@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./styleEmploye.css";
 import Navbar from "../../Components/Navbar";
 import Papa from 'papaparse';
-import {saveAs} from 'file-saver'
-import ExcelJS from 'exceljs'
+import { saveAs } from 'file-saver';
+import ExcelJS from 'exceljs';
 
 export default function Usuarios() {
   const [estudiantes, setEstudiantes] = useState([]);
@@ -66,6 +66,45 @@ export default function Usuarios() {
     }
   };
 
+  const cargarEstudiantes = () => {
+    fetch('/src/scripts/estudiantes.csv')
+      .then(response => response.text())
+      .then(csvText => {
+        Papa.parse(csvText, {
+          header: false,
+          complete: (results) => {
+            const estudiantesFormateados = results.data.map(row => ({
+              nombre: row[0],
+              documento: row[1],
+              codigo: row[2],
+              email: row[3],
+              semestre: row[4],
+              proyectoCurricular: row[5],
+              creditos: row[6]
+            }));
+            setEstudiantes(estudiantesFormateados);
+          }
+        });
+      });
+  };
+
+
+  const eliminarUltimoRegistro = () => {
+    fetch('http://localhost:3000/api/eliminar-ultimo-estudiante', { method: 'DELETE' })
+  .then(response => response.json())
+  .then(data => {
+    if (data.message === 'Último registro eliminado') {
+      alert('Registro eliminado con éxito');
+      cargarEstudiantes(); // Recargar la lista de estudiantes
+    } else {
+      alert(data.message);
+    }
+  })
+  .catch(error => {
+    console.error('Error al eliminar el registro:', error);
+  });
+  };
+
   return (
     <div>
       <Navbar></Navbar>
@@ -105,7 +144,7 @@ export default function Usuarios() {
               <p>Proyecto curricular: {estudiante.proyectoCurricular}</p>
               <p>Créditos: {estudiante.creditos}</p>
               <div className="botonCard">
-                <button className="btnc">Eliminar Registro</button>
+                   <button className="boton" onClick={eliminarUltimoRegistro}>Eliminar Último Registro</button>
               </div>
             </div>
           ))}

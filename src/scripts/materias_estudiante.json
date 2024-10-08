@@ -2,42 +2,66 @@
   {
     "codMateria": "1",
     "nombreMateria": "CÁLCULO DIFERENCIAL",
-    "nota": 41,
+    "nota": 28,
     "creditos": 4,
     "clasificacion": "OB",
-    "year": "2021"
+    "year": "2016"
+  },
+  {
+    "codMateria": "1",
+    "nombreMateria": "CÁLCULO DIFERENCIAL",
+    "nota": 25,
+    "creditos": 4,
+    "clasificacion": "OB",
+    "year": "2015"
   },
   {
     "codMateria": "4",
     "nombreMateria": "CÁTEDRA FRANCISCO JOSÉ DE CALDAS",
-    "nota": 33,
+    "nota": 36,
     "creditos": 1,
     "clasificacion": "OC",
-    "year": "2021"
+    "year": "2016"
+  },
+  {
+    "codMateria": "4",
+    "nombreMateria": "CÁTEDRA FRANCISCO JOSÉ DE CALDAS",
+    "nota": 19,
+    "creditos": 1,
+    "clasificacion": "OC",
+    "year": "2015"
   },
   {
     "codMateria": "9",
     "nombreMateria": "ÁLGEBRA LINEAL",
-    "nota": 40,
+    "nota": 37,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2021"
+    "year": "2016"
+  },
+  {
+    "codMateria": "9",
+    "nombreMateria": "ÁLGEBRA LINEAL",
+    "nota": 24,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2015"
   },
   {
     "codMateria": "12",
     "nombreMateria": "CÁTEDRA DEMOCRACIA Y CIUDADANÍA",
-    "nota": 36,
+    "nota": 39,
     "creditos": 1,
     "clasificacion": "OC",
-    "year": "2021"
+    "year": "2015"
   },
   {
     "codMateria": "1054",
     "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS I",
-    "nota": 43,
+    "nota": 39,
     "creditos": 3,
     "clasificacion": "OC",
-    "year": "2021"
+    "year": "2015"
   },
   {
     "codMateria": "1507",
@@ -45,262 +69,222 @@
     "nota": 39,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2021"
+    "year": "2016"
+  },
+  {
+    "codMateria": "1507",
+    "nombreMateria": "INTRODUCCIÓN A ALGORITMOS",
+    "nota": 11,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2015"
   },
   {
     "codMateria": "1508",
     "nombreMateria": "LÓGICA MATEMÁTICA",
-    "nota": 43,
+    "nota": 33,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2021"
-  },
-  {
-    "codMateria": "3",
-    "nombreMateria": "FÍSICA I: MECÁNICA NEWTONIANA",
-    "nota": 42,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2022"
-  },
-  {
-    "codMateria": "7",
-    "nombreMateria": "CÁLCULO INTEGRAL",
-    "nota": 31,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2022"
+    "year": "2015"
   },
   {
     "codMateria": "1056",
     "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS II",
-    "nota": 42,
+    "nota": 33,
     "creditos": 2,
     "clasificacion": "OC",
-    "year": "2021"
+    "year": "2016"
   },
   {
     "codMateria": "1072",
     "nombreMateria": "ADMINISTRACIÓN",
-    "nota": 35,
+    "nota": 41,
     "creditos": 3,
     "clasificacion": "OC",
-    "year": "2021"
+    "year": "2016"
   },
   {
     "codMateria": "1082",
     "nombreMateria": "CÁTEDRA DE CONTEXTO",
-    "nota": 50,
+    "nota": 44,
     "creditos": 1,
     "clasificacion": "OC",
-    "year": "2021"
-  },
-  {
-    "codMateria": "1513",
-    "nombreMateria": "ESTRUCTURA DE DATOS",
-    "nota": 41,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2022"
+    "year": "2016"
   },
   {
     "codMateria": "1514",
     "nombreMateria": "PROGRAMACIÓN ORIENTADA A OBJETOS",
-    "nota": 34,
+    "nota": 33,
     "creditos": 3,
     "clasificacion": "OB",
-    "year": "2022"
-  },
-  {
-    "codMateria": "13",
-    "nombreMateria": "FÍSICA II: ELECTROMAGNETISMO",
-    "nota": 31,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2022"
+    "year": "2016"
   },
   {
     "codMateria": "1060",
     "nombreMateria": "CIENCIA TECNOLOGÍA Y SOCIEDAD",
-    "nota": 40,
+    "nota": 43,
     "creditos": 2,
     "clasificacion": "OC",
-    "year": "2022"
-  },
-  {
-    "codMateria": "1503",
-    "nombreMateria": "CONTABILIDAD GENERAL",
-    "nota": 31,
-    "creditos": 2,
-    "clasificacion": "E",
-    "year": "2022"
-  },
-  {
-    "codMateria": "1509",
-    "nombreMateria": "FUNDAMENTOS DE ORGANIZACIÓN",
-    "nota": 36,
-    "creditos": 2,
-    "clasificacion": "EI",
-    "year": "2022"
-  },
-  {
-    "codMateria": "1518",
-    "nombreMateria": "PROGRAMACIÓN MULTINIVEL",
-    "nota": 36,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2023"
-  },
-  {
-    "codMateria": "1519",
-    "nombreMateria": "BASES DE DATOS",
-    "nota": 45,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2023"
+    "year": "2016"
   },
   {
     "codMateria": "9901",
     "nombreMateria": "SEGUNDA LENGUA I - INGLÉS",
-    "nota": 44,
+    "nota": 29,
     "creditos": 2,
     "clasificacion": "OC",
-    "year": "2023"
+    "year": "2016"
   },
   {
-    "codMateria": "1075",
-    "nombreMateria": "ÉTICA Y SOCIEDAD",
-    "nota": 40,
-    "creditos": 2,
-    "clasificacion": "OC",
-    "year": "2022"
-  },
-  {
-    "codMateria": "1510",
-    "nombreMateria": "FUNDAMENTOS DE ECONOMÍA",
-    "nota": 37,
-    "creditos": 2,
-    "clasificacion": "EI",
-    "year": "2023"
-  },
-  {
-    "codMateria": "1515",
-    "nombreMateria": "ANÁLISIS Y MÉTODOS NUMÉRICOS",
-    "nota": 33,
-    "creditos": 3,
-    "clasificacion": "EI",
-    "year": "2023"
-  },
-  {
-    "codMateria": "1524",
-    "nombreMateria": "PROGRAMACIÓN AVANZADA",
-    "nota": 48,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2023"
-  },
-  {
-    "codMateria": "1526",
-    "nombreMateria": "DISEÑO LÓGICO",
-    "nota": 45,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2023"
-  },
-  {
-    "codMateria": "9902",
-    "nombreMateria": "SEGUNDA LENGUA II - INGLES",
-    "nota": 32,
-    "creditos": 2,
-    "clasificacion": "OC",
-    "year": "2023"
-  },
-  {
-    "codMateria": "1516",
-    "nombreMateria": "ANÁLISIS SOCIAL COLOMBIANO",
-    "nota": 40,
-    "creditos": 2,
-    "clasificacion": "EE",
-    "year": "2023"
-  },
-  {
-    "codMateria": "1531",
-    "nombreMateria": "ANÁLISIS DE SISTEMAS",
-    "nota": 32,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2024"
-  },
-  {
-    "codMateria": "1533",
-    "nombreMateria": "SISTEMAS OPERACIONALES",
-    "nota": 44,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2023"
-  },
-  {
-    "codMateria": "1535",
-    "nombreMateria": "TRANSMISIÓN DE DATOS",
-    "nota": 32,
-    "creditos": 3,
-    "clasificacion": "EI",
-    "year": "2023"
-  },
-  {
-    "codMateria": "1537",
-    "nombreMateria": "TALLER DE INVESTIGACIÓN",
-    "nota": 50,
-    "creditos": 2,
-    "clasificacion": "OB",
-    "year": "2023"
-  },
-  {
-    "codMateria": "7202",
-    "nombreMateria": "APLICACIONES PARA INTERNET",
-    "nota": 44,
-    "creditos": 3,
-    "clasificacion": "EI",
-    "year": "2024"
-  },
-  {
-    "codMateria": "1532",
-    "nombreMateria": "INTELIGENCIA ARTIFICIAL",
-    "nota": 30,
-    "creditos": 3,
-    "clasificacion": "OB",
-    "year": "2024"
-  },
-  {
-    "codMateria": "1540",
-    "nombreMateria": "GLOBALIZACIÓN",
-    "nota": 39,
-    "creditos": 2,
-    "clasificacion": "EE",
-    "year": "2024"
-  },
-  {
-    "codMateria": "1542",
-    "nombreMateria": "PROGRAMACIÓN POR COMPONENTES",
-    "nota": 42,
-    "creditos": 3,
-    "clasificacion": "EI",
-    "year": "2024"
-  },
-  {
-    "codMateria": "9903",
-    "nombreMateria": "SEGUNDA LENGUA III - INGLÉS",
+    "codMateria": "1511",
+    "nombreMateria": "TIC'S EN LAS ORGANIZACIONES",
     "nota": 34,
     "creditos": 2,
-    "clasificacion": "OC",
-    "year": "2024"
+    "clasificacion": "EI",
+    "year": "2016"
   },
   {
-    "codMateria": "1525",
-    "nombreMateria": "BASES DE DATOS AVANZADAS",
+    "codMateria": "1",
+    "nombreMateria": "CÁLCULO DIFERENCIAL",
+    "nota": 28,
+    "creditos": 4,
+    "clasificacion": "OB",
+    "year": "2016"
+  },
+  {
+    "codMateria": "1",
+    "nombreMateria": "CÁLCULO DIFERENCIAL",
+    "nota": 25,
+    "creditos": 4,
+    "clasificacion": "OB",
+    "year": "2015"
+  },
+  {
+    "codMateria": "4",
+    "nombreMateria": "CÁTEDRA FRANCISCO JOSÉ DE CALDAS",
+    "nota": 36,
+    "creditos": 1,
+    "clasificacion": "OC",
+    "year": "2016"
+  },
+  {
+    "codMateria": "4",
+    "nombreMateria": "CÁTEDRA FRANCISCO JOSÉ DE CALDAS",
+    "nota": 19,
+    "creditos": 1,
+    "clasificacion": "OC",
+    "year": "2015"
+  },
+  {
+    "codMateria": "9",
+    "nombreMateria": "ÁLGEBRA LINEAL",
+    "nota": 37,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2016"
+  },
+  {
+    "codMateria": "9",
+    "nombreMateria": "ÁLGEBRA LINEAL",
+    "nota": 24,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2015"
+  },
+  {
+    "codMateria": "12",
+    "nombreMateria": "CÁTEDRA DEMOCRACIA Y CIUDADANÍA",
+    "nota": 39,
+    "creditos": 1,
+    "clasificacion": "OC",
+    "year": "2015"
+  },
+  {
+    "codMateria": "1054",
+    "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS I",
+    "nota": 39,
+    "creditos": 3,
+    "clasificacion": "OC",
+    "year": "2015"
+  },
+  {
+    "codMateria": "1507",
+    "nombreMateria": "INTRODUCCIÓN A ALGORITMOS",
+    "nota": 39,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2016"
+  },
+  {
+    "codMateria": "1507",
+    "nombreMateria": "INTRODUCCIÓN A ALGORITMOS",
+    "nota": 11,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2015"
+  },
+  {
+    "codMateria": "1508",
+    "nombreMateria": "LÓGICA MATEMÁTICA",
     "nota": 33,
     "creditos": 3,
-    "clasificacion": "CP",
-    "year": "2023"
+    "clasificacion": "OB",
+    "year": "2015"
+  },
+  {
+    "codMateria": "1056",
+    "nombreMateria": "PRODUCCIÓN Y COMPRENSIÓN DE TEXTOS II",
+    "nota": 33,
+    "creditos": 2,
+    "clasificacion": "OC",
+    "year": "2016"
+  },
+  {
+    "codMateria": "1072",
+    "nombreMateria": "ADMINISTRACIÓN",
+    "nota": 41,
+    "creditos": 3,
+    "clasificacion": "OC",
+    "year": "2016"
+  },
+  {
+    "codMateria": "1082",
+    "nombreMateria": "CÁTEDRA DE CONTEXTO",
+    "nota": 44,
+    "creditos": 1,
+    "clasificacion": "OC",
+    "year": "2016"
+  },
+  {
+    "codMateria": "1514",
+    "nombreMateria": "PROGRAMACIÓN ORIENTADA A OBJETOS",
+    "nota": 33,
+    "creditos": 3,
+    "clasificacion": "OB",
+    "year": "2016"
+  },
+  {
+    "codMateria": "1060",
+    "nombreMateria": "CIENCIA TECNOLOGÍA Y SOCIEDAD",
+    "nota": 43,
+    "creditos": 2,
+    "clasificacion": "OC",
+    "year": "2016"
+  },
+  {
+    "codMateria": "9901",
+    "nombreMateria": "SEGUNDA LENGUA I - INGLÉS",
+    "nota": 29,
+    "creditos": 2,
+    "clasificacion": "OC",
+    "year": "2016"
+  },
+  {
+    "codMateria": "1511",
+    "nombreMateria": "TIC'S EN LAS ORGANIZACIONES",
+    "nota": 34,
+    "creditos": 2,
+    "clasificacion": "EI",
+    "year": "2016"
   }
 ]

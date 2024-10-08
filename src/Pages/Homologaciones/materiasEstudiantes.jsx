@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../../Components/Navbar";
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import logo from "../../assets/Escudo_UD.png";
 
 // Función para ordenar las materias por semestre
 const ordenarMateriasPorSemestre = (materias) => {
@@ -85,60 +86,115 @@ export default function MateriasEstudiante() {
       const doc = new jsPDF();
       let yPos = 20;
 
-      doc.setFontSize(18);
-      doc.text('Reporte del Estudiante', 105, yPos, { align: 'center' });
+      // Agregar logo
+      doc.addImage(logo, 'PNG', 10, 10, 20, 20);
+
+      // Estilos
+      const titleStyle = { fontSize: 16, fontStyle: 'bold' };
+      const subtitleStyle = { fontSize: 14, fontStyle: 'bold' };
+      const textStyle = { fontSize: 10 };
+      const headerStyle = { fillColor: [41, 128, 185], textColor: 255, fontStyle: 'bold' };
+
+      // Encabezado del documento
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(titleStyle.fontSize);
+      doc.text('UNIVERSIDAD DISTRITAL FRANCISCO JOSÉ DE CALDAS', 110, yPos, { align: 'center' });
+      yPos += 8;
+      doc.setFontSize(subtitleStyle.fontSize);
+      doc.text('SECRETARÍA ACADÉMICA', 105, yPos, { align: 'center' });
+      yPos += 8;
+      doc.text('CERTIFICADO DE NOTAS INTERNO', 105, yPos, { align: 'center' });
+      yPos += 15;
+
+      // Información del estudiante
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(textStyle.fontSize);
+      doc.text(`NOMBRE: ${datos.estudiante.nombre}`, 20, yPos);
+      doc.text(`IDENTIFICACIÓN: ${datos.estudiante.identificacion}`, 120, yPos);
+      yPos += 8;
+      doc.text(`CÓDIGO: ${datos.estudiante.codigo}`, 20, yPos);
+      const porcentajeAvance = (datos.creditosAprobados / 100 * 100).toFixed(2); // Asumiendo que el total de créditos es 100
+      doc.text(`PORCENTAJE DE AVANCE: ${porcentajeAvance}%`, 120, yPos);
+      yPos += 8;
+      doc.text(`RENOVACIONES: ${datos.estudiante.renovaciones}`, 120, yPos);
+      yPos += 8;
+      const creditosFaltantes = 100 - datos.creditosAprobados; // Asumiendo que el total de créditos es 100
+      doc.text(`CRÉDITOS APROBADOS: ${datos.creditosAprobados}`, 20, yPos);
+      doc.text(`CRÉDITOS FALTANTES: ${creditosFaltantes}`, 120, yPos);
+      yPos += 15;
+
+      // Materias Aprobadas por Semestre
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(subtitleStyle.fontSize);
+      doc.text('MATERIAS APROBADAS POR SEMESTRE', 20, yPos);
       yPos += 10;
 
-      doc.setFontSize(12);
-      doc.text(`Programa: ${datos.estudiante.proyectoCurricular}`, 20, yPos);
-      yPos += 10;
-      doc.text(`Código: ${datos.estudiante.codigo}`, 20, yPos);
-      yPos += 10;
-      doc.text(`Créditos aprobados: ${datos.creditosAprobados}`, 20, yPos);
-      yPos += 20;
+      const materiasPorSemestre = datos.materiasAprobadas.reduce((acc, materia) => {
+        const semestre = obtenerSemestre(materia.codMateria);
+        if (!acc[semestre]) {
+          acc[semestre] = [];
+        }
+        acc[semestre].push(materia);
+        return acc;
+      }, {});
 
-      doc.setFontSize(14);
-      doc.text('Materias Aprobadas', 20, yPos);
-      yPos += 10;
+      Object.entries(materiasPorSemestre).forEach(([semestre, materias]) => {
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(textStyle.fontSize);
+        doc.text(`Semestre ${semestre}`, 20, yPos);
+        yPos += 5;
 
-      const aprobadasHeaders = ['Nombre', 'Código', 'Nota', 'Clasificación', 'Año'];
-      const aprobadasData = datos.materiasAprobadas.map(materia => [
-        materia.nombreMateria,
-        materia.codMateria,
-        materia.nota,
-        materia.clasificacion,
-        materia.year
-      ]);
+        const headers = ['CÓDIGO', 'NOMBRE', 'NOTA', 'CRÉDITOS', 'CLASIFICACIÓN'];
+        const data = materias.map(m => [m.codMateria, m.nombreMateria, m.nota.toFixed(1), m.creditos, m.clasificacion]);
 
-      doc.autoTable({
-        startY: yPos,
-        head: [aprobadasHeaders],
-        body: aprobadasData,
+        doc.autoTable({
+          startY: yPos,
+          head: [headers],
+          body: data,
+          theme: 'striped',
+          headStyles: headerStyle,
+          styles: { fontSize: 8, cellPadding: 2 },
+          columnStyles: { 0: { cellWidth: 20 }, 1: { cellWidth: 'auto' }, 2: { cellWidth: 20 }, 3: { cellWidth: 20 }, 4: { cellWidth: 30 } },
+        });
+
+        yPos = doc.lastAutoTable.finalY + 10;
       });
 
-      yPos = doc.lastAutoTable.finalY + 20;
-
-      doc.setFontSize(14);
-      doc.text('Materias Pendientes', 20, yPos);
+      // Materias Pendientes
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(subtitleStyle.fontSize);
+      doc.text('MATERIAS PENDIENTES', 20, yPos);
       yPos += 10;
 
-      const pendientesHeaders = ['Nombre', 'Código'];
-      const pendientesData = datos.materiasPendientes.map(materia => [
-        materia.nombreMateria,
-        materia.codMateria
-      ]);
+      const pendientesHeaders = ['CÓDIGO', 'NOMBRE', 'CRÉDITOS', 'CLASIFICACIÓN'];
+      const pendientesData = datos.materiasPendientes.map(m => [m.codMateria, m.nombreMateria, m.creditos, m.clasificacion]);
 
       doc.autoTable({
         startY: yPos,
         head: [pendientesHeaders],
         body: pendientesData,
+        theme: 'striped',
+        headStyles: headerStyle,
+        styles: { fontSize: 8, cellPadding: 2 },
+        columnStyles: { 0: { cellWidth: 20 }, 1: { cellWidth: 'auto' }, 2: { cellWidth: 20 }, 3: { cellWidth: 30 } },
       });
 
+      // Pie de página
+      const pageCount = doc.internal.getNumberOfPages();
+      doc.setFont('helvetica', 'italic');
+      doc.setFontSize(8);
+      for (let i = 1; i <= pageCount; i++) {
+        doc.setPage(i);
+        doc.text(`Página ${i} de ${pageCount}`, doc.internal.pageSize.width / 2, doc.internal.pageSize.height - 10, { align: 'center' });
+      }
+
+      // Guardar el PDF
       doc.save('reporte_estudiante.pdf');
     } catch (error) {
       console.error('Error al generar el PDF:', error);
     }
   };
+
 
   if (loading) return <div className="flex justify-center items-center h-screen">Cargando...</div>;
   if (error) return <div className="text-red-500 text-center">{error}</div>;
@@ -162,13 +218,13 @@ export default function MateriasEstudiante() {
             {datos.estudiante.proyectoCurricular}
           </h1>
           <div className="flex justify-between items-center">
-            <p className="text-gray-500 md:text-base/relaxed dark:text-gray-200">
-              Plan de estudio 239:
-            </p>
-            <button onClick={generarPDF} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Descargar reporte del estudiante
-            </button>
-          </div>
+          <p className="text-gray-500 md:text-base/relaxed dark:text-gray-200">
+            Plan de estudio 239:
+          </p>
+          <button onClick={generarPDF} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Descargar reporte del estudiante
+          </button>
+        </div>
         </div>
 
         <div className="mt-8">
