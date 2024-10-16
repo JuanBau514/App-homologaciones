@@ -31,20 +31,16 @@ async function scraping_info_estudiante(htmlContent) {
 
 function limpiarCodigo(codigo) {
     codigo = codigo.replace(/\n/g, '');
-    codigo = codigo.replace(/=/g, ''); // Elimina el signo igual (=)
-    // Reemplaza los espacios múltiples con un solo espacio
+    codigo = codigo.replace(/=/g, ''); 
     codigo = codigo.replace(/\s+/g, ' ');
     codigo = codigo.slice(0, 11);
     return codigo;
 }
 
 function limpiarTexto(texto) {
-    // Reemplaza todos los saltos de línea con un espacio en blanco
     texto = texto.replace(/\n/g, '');
-    texto = texto.replace(/=/g, ''); // Elimina el signo igual (=)
-    // Reemplaza los espacios múltiples con un solo espacio
+    texto = texto.replace(/=/g, ''); 
     texto = texto.replace(/\s+/g, ' ');
-
     return texto.trim(); // Elimina espacios en blanco al principio y al final
 }
 
@@ -117,7 +113,7 @@ async function scraping_materias(htmlContent) {
                     });
                 }
 
-                // Detener la captura después de "INGENIERÍA DE SOFTWARE"
+                // Detener la captura después de "INGENIERÍA DE SOFTWARE -  GERENCIA Y AUDITORÍA EN REDES"
                 if (nombreMateria === 'INGENIERÍA DE SOFTWARE') {
                     return false; // Salir del bucle each
                 }

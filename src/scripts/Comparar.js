@@ -3,40 +3,47 @@ import {
 } from 'fs';
 
 // Función para comparar las materias del estudiante con las materias necesarias para graduarse
-function compararMaterias(estudianteMaterias, planEstudio) {
+export function compararMaterias(estudianteMaterias, planEstudio) {
+    // Filtrar las materias aprobadas (nota >= 30)
     const materiasAprobadas = estudianteMaterias.filter(materia => materia.nota >= 30);
 
-    const creditosAprobados = materiasAprobadas.reduce((acc, materia) => acc + parseInt(materia.creditos, 0), 108);
+    // Calcular los créditos aprobados
+    const creditosAprobados = materiasAprobadas.reduce((acc, materia) => acc + parseInt(materia.creditos, 10), 0);
 
-    const materiasDetalladas = materiasAprobadas.map(materia => {
-        return {
-            codMateria: materia.codMateria,
-            nombreMateria: materia.nombreMateria,
-            nota: materia.nota,
-            creditos: materia.creditos,
-            clasificacion: materia.clasificacion,
-            year: materia.year
-        };
+    // Mapeo de nombres de materias a minúsculas para asegurar coincidencias correctas
+    const materiasAprobadasNombres = new Set(materiasAprobadas.map(materia => materia.nombreMateria.toLowerCase().trim()));
+
+    // Identificar las materias faltantes en el plan de estudios
+    const materiasPendientes = planEstudio.filter(materia => {
+        const nombreMateria = materia.nombreMateria?.toLowerCase().trim();
+        // Revisar que la materia esté definida y no esté en la lista de aprobadas
+        return nombreMateria && !materiasAprobadasNombres.has(nombreMateria);
     });
 
-    const materiasPendientes = planEstudio.filter(materia => !materiasAprobadas.some(aprobada => aprobada.nombreMateria === materia.nombreMateria));
+    // Construir el resultado de las materias pendientes con datos detallados
+    const materiasPendientesDetalladas = materiasPendientes.map(materia => ({
+        codMateria: materia.codMateria || null,
+        nombreMateria: materia.nombreMateria || null,
+        nota: null,
+        creditos: materia.creditos || null,
+        clasificacion: materia.clasificacion || null,
+        year: null
+    }));
 
-    // Construir las materias pendientes con el nombre de la materia y el resto de los datos como null
-    const materiasPendientesDetalladas = materiasPendientes.map(materia => {
-        return {
-            codMateria: null,
-            nombreMateria: materia.nombreMateria,
-            nota: null,
-            creditos: null,
-            clasificacion: null,
-            year: null
-        };
-    }).filter(materia => materia.nombreMateria.trim() !== ''); // Filtrar para eliminar los objetos completamente vacíos
+    // Construir el resultado de las materias aprobadas con datos detallados
+    const materiasDetalladas = materiasAprobadas.map(materia => ({
+        codMateria: materia.codMateria,
+        nombreMateria: materia.nombreMateria,
+        nota: materia.nota,
+        creditos: materia.creditos,
+        clasificacion: materia.clasificacion,
+        year: materia.year
+    }));
 
     return {
         materiasAprobadas: materiasDetalladas,
         materiasPendientes: materiasPendientesDetalladas,
-        creditosAprobados,
+        creditosAprobados
     };
 }
 
@@ -44,7 +51,7 @@ function compararMaterias(estudianteMaterias, planEstudio) {
 // Cargar los datos de los archivos JSON
 const cargarDatos = () => {
     const datosEstudiante = JSON.parse(readFileSync('materias_estudiante.json', 'utf-8'));
-    const materiasGraduacion = JSON.parse(readFileSync("./sistematizacion/Tecnologia-planEstudio-239.json", 'utf-8'));
+const materiasGraduacion = JSON.parse(readFileSync("./sistematizacion/Tecnologia-planEstudio-239.json", 'utf-8'));
     return {
         datosEstudiante,
         materiasGraduacion
