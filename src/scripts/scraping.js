@@ -31,16 +31,15 @@ async function scraping_info_estudiante(htmlContent) {
 
 function limpiarCodigo(codigo) {
     codigo = codigo.replace(/\n/g, '');
-    codigo = codigo.replace(/=/g, ''); // Elimina el signo igual (=)
+    codigo = codigo.replace(/=/g, ''); 
     codigo = codigo.replace(/\s+/g, ' ');
     codigo = codigo.slice(0, 11);
     return codigo;
 }
 
 function limpiarTexto(texto) {
-    // Reemplaza todos los saltos de línea con un espacio en blanco
     texto = texto.replace(/\n/g, '');
-    texto = texto.replace(/=/g, ''); // Elimina el signo igual (=)
+    texto = texto.replace(/=/g, ''); 
     texto = texto.replace(/\s+/g, ' ');
     return texto.trim(); // Elimina espacios en blanco al principio y al final
 }
